@@ -45,7 +45,7 @@ export function SiteFooter() {
         <div>
           <h4 className="font-display text-sm font-semibold uppercase tracking-wider text-primary">Connect</h4>
           <ul className="mt-4 space-y-3 text-sm text-muted-foreground">
-            <li className="flex items-center gap-2"><Phone className="h-4 w-4 text-primary" /> +234 814 172 7040</li>
+            <li className="flex items-center gap-2"><Phone className="h-4 w-4 text-primary" />0912 705 0547</li>
             <li className="flex items-center gap-2"><Mail className="h-4 w-4 text-primary" /> businessmoversofficial@gmail.com</li>
             <li className="flex items-center gap-2"><Instagram className="h-4 w-4 text-primary" /> @businessmoversofficial</li>
           </ul>
