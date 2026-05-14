@@ -42,13 +42,13 @@ function ContactPage() {
                 <div className="mt-1 font-medium">businessmoversofficial@gmail.com</div>
               </div>
             </a>
-            <a href="tel:+2348141727040" className="flex items-start gap-4 rounded-2xl border border-border bg-gradient-card p-6 transition-colors hover:border-primary/50">
+            <a href="tel:+2349127050547" className="flex items-start gap-4 rounded-2xl border border-border bg-gradient-card p-6 transition-colors hover:border-primary/50">
               <div className="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-primary/15 text-primary ring-1 ring-primary/30">
                 <Phone className="h-5 w-5" />
               </div>
               <div>
                 <div className="text-xs uppercase tracking-wider text-muted-foreground">Phone / WhatsApp</div>
-                <div className="mt-1 font-medium">+234 814 172 7040</div>
+                <div className="mt-1 font-medium">0912 705 0547</div>
               </div>
             </a>
             <a href="https://instagram.com/businessmoversofficial" className="flex items-start gap-4 rounded-2xl border border-border bg-gradient-card p-6 transition-colors hover:border-primary/50">
