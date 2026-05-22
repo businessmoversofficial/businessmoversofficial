@@ -1,6 +1,9 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
-import { Mail, Phone, Instagram, Linkedin, MapPin, Send, CheckCircle2 } from "lucide-react";
+import { z } from "zod";
+import { Mail, Phone, Instagram, Linkedin, MapPin, Send, CheckCircle2, Loader2 } from "lucide-react";
+import { supabase } from "@/integrations/supabase/client";
+import { toast } from "sonner";
 
 export const Route = createFileRoute("/contact")({
   head: () => ({
@@ -12,8 +15,48 @@ export const Route = createFileRoute("/contact")({
   component: ContactPage,
 });
 
+const contactSchema = z.object({
+  name: z.string().trim().min(1, "Name is required").max(100),
+  email: z.string().trim().email("Invalid email").max(255),
+  company: z.string().trim().max(200).optional().or(z.literal("")),
+  industry: z.string().trim().max(200).optional().or(z.literal("")),
+  message: z.string().trim().min(1, "Message is required").max(2000),
+});
+
 function ContactPage() {
   const [sent, setSent] = useState(false);
+  const [loading, setLoading] = useState(false);
+
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    const fd = new FormData(e.currentTarget);
+    const raw = {
+      name: String(fd.get("name") ?? ""),
+      email: String(fd.get("email") ?? ""),
+      company: String(fd.get("company") ?? ""),
+      industry: String(fd.get("industry") ?? ""),
+      message: String(fd.get("message") ?? ""),
+    };
+    const parsed = contactSchema.safeParse(raw);
+    if (!parsed.success) {
+      toast.error(parsed.error.issues[0]?.message ?? "Please check the form");
+      return;
+    }
+    setLoading(true);
+    const { error } = await supabase.from("contact_submissions").insert({
+      name: parsed.data.name,
+      email: parsed.data.email,
+      company: parsed.data.company || null,
+      industry: parsed.data.industry || null,
+      message: parsed.data.message,
+    });
+    setLoading(false);
+    if (error) {
+      toast.error("Could not send message. Please try again.");
+      return;
+    }
+    setSent(true);
+  }
 
   return (
     <div>
@@ -82,7 +125,7 @@ function ContactPage() {
 
           {/* FORM */}
           <form
-            onSubmit={(e) => { e.preventDefault(); setSent(true); }}
+            onSubmit={handleSubmit}
             className="rounded-3xl border border-primary/20 bg-gradient-card p-8 shadow-soft md:p-10"
           >
             <h2 className="font-display text-2xl font-bold">Tell us about your business</h2>
@@ -108,15 +151,17 @@ function ContactPage() {
                     name="message"
                     rows={5}
                     required
+                    maxLength={2000}
                     className="mt-2 w-full resize-none rounded-xl border border-input bg-background/60 px-4 py-3 text-sm outline-none transition-colors focus:border-primary"
                     placeholder="Tell us about your goals, challenges, and what success looks like."
                   />
                 </div>
                 <button
                   type="submit"
-                  className="mt-2 inline-flex items-center justify-center gap-2 rounded-full bg-gradient-cyan px-7 py-3.5 text-sm font-semibold text-primary-foreground shadow-glow transition-transform hover:scale-[1.02]"
+                  disabled={loading}
+                  className="mt-2 inline-flex items-center justify-center gap-2 rounded-full bg-gradient-cyan px-7 py-3.5 text-sm font-semibold text-primary-foreground shadow-glow transition-transform hover:scale-[1.02] disabled:opacity-60"
                 >
-                  Send message <Send className="h-4 w-4" />
+                  {loading ? (<>Sending <Loader2 className="h-4 w-4 animate-spin" /></>) : (<>Send message <Send className="h-4 w-4" /></>)}
                 </button>
               </div>
             )}
