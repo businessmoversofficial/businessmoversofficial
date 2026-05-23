@@ -54,7 +54,10 @@ export function SiteFooter() {
       <div className="border-t border-border">
         <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-2 px-6 py-5 text-xs text-muted-foreground md:flex-row">
           <span>© {new Date().getFullYear()} Business Movers. All rights reserved. RC: 7285941</span>
-          <span>Architects of Excellence.</span>
+          <div className="flex items-center gap-4">
+            <span>Architects of Excellence.</span>
+            <Link to="/login" className="hover:text-primary">Admin</Link>
+          </div>
         </div>
       </div>
     </footer>
