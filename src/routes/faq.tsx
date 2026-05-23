@@ -159,8 +159,8 @@ function FAQPage() {
                 We would love to hear from you. Reach out and a member of our team will respond within the same business day.
               </p>
               <div className="mt-6 flex flex-wrap gap-3 text-sm text-muted-foreground">
-                <span className="inline-flex items-center gap-2"><Phone className="h-4 w-4 text-primary" /> 0912 705 0547</span>
-                <span className="inline-flex items-center gap-2"><Mail className="h-4 w-4 text-primary" /> businessmoversofficial@gmail.com</span>
+                <span className="inline-flex items-center gap-2"><Phone className="h-4 w-4 text-primary" /><span>0912 705 0547</span></span>
+                <span className="inline-flex items-center gap-2"><Mail className="h-4 w-4 text-primary" /><span>businessmoversofficial@gmail.com</span></span>
               </div>
             </div>
             <div className="flex flex-col gap-3 sm:flex-row md:flex-col">
