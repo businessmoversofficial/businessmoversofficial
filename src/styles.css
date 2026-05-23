@@ -279,7 +279,7 @@
 /* --- BLOG: pure white with dark green card accents -------- */
 .theme-blog-white {
   --background: oklch(1 0 0);
-  --foreground: oklch(0.22 0.03 200);
+  --foreground: oklch(0.3 0.08 160);
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.22 0.03 200);
   --popover: oklch(1 0 0);
