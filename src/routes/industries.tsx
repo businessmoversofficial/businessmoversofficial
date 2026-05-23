@@ -81,16 +81,22 @@ function IndustriesPage() {
       </section>
 
       <section className="mx-auto max-w-7xl px-6 py-20">
+        <div className="mb-8">
+          <span className="text-xs font-semibold uppercase tracking-[0.25em] text-primary">More sectors we serve</span>
+          <h2 className="mt-3 font-display text-3xl font-bold md:text-4xl">Beyond the spotlight.</h2>
+        </div>
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {industries.map((i) => (
-            <div key={i.title} className="group rounded-2xl border border-border bg-gradient-card p-8 transition-all hover:-translate-y-1 hover:border-primary/50 hover:shadow-glow">
-              <div className="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-primary/15 text-primary ring-1 ring-primary/30">
-                <i.icon className="h-5 w-5" />
+          {industries
+            .filter((i) => !["Real Estate", "Fintech", "FMCG", "Security", "Law Firms", "Agriculture"].includes(i.title))
+            .map((i) => (
+              <div key={i.title} className="group rounded-2xl border border-border bg-gradient-card p-8 transition-all hover:-translate-y-1 hover:border-primary/50 hover:shadow-glow">
+                <div className="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-primary/15 text-primary ring-1 ring-primary/30">
+                  <i.icon className="h-5 w-5" />
+                </div>
+                <h2 className="mt-5 font-display text-xl font-semibold">{i.title}</h2>
+                <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{i.desc}</p>
               </div>
-              <h2 className="mt-5 font-display text-xl font-semibold">{i.title}</h2>
-              <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{i.desc}</p>
-            </div>
-          ))}
+            ))}
         </div>
       </section>
     </div>
