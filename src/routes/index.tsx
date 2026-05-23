@@ -51,16 +51,27 @@ const stats = [
 ];
 
 const clients = [
-  "Noble Guard Security",
-  "Baker Industries Limited",
-  "Oddspace Consult",
-  "Novasmile Dental Studios",
-  "HypeMan Africa",
-  "GE Homes & Properties Limited",
-  "Absolute Grace Investment Limited",
-  "Dukioluwa Industries Limited",
-  "DHS Investment Limited",
+  { name: "Noble Guard Security", industry: "Security" },
+  { name: "Baker Industries Limited", industry: "Manufacturing" },
+  { name: "Oddspace Consult", industry: "Consulting" },
+  { name: "Novasmile Dental Studios", industry: "Healthcare" },
+  { name: "HypeMan Africa", industry: "Media" },
+  { name: "GE Homes & Properties Limited", industry: "Real Estate" },
+  { name: "Absolute Grace Investment Limited", industry: "Investment" },
+  { name: "Dukioluwa Industries Limited", industry: "Industrial" },
+  { name: "DHS Investment Limited", industry: "Investment" },
 ];
+
+const initialsFor = (name: string) =>
+  name
+    .replace(/limited|ltd|industries|investment|studios|consult|africa|homes|&|properties/gi, "")
+    .trim()
+    .split(/\s+/)
+    .map((w) => w[0])
+    .filter(Boolean)
+    .slice(0, 2)
+    .join("")
+    .toUpperCase();
 
 const testimonials = [
   {
@@ -68,18 +79,21 @@ const testimonials = [
       "Business Movers rebuilt our go-to-market from the ground up. Within two quarters we doubled qualified leads and finally had a property strategy our board could stand behind.",
     name: "GE Homes & Properties Limited",
     role: "Executive Team",
+    metric: "2x qualified leads",
   },
   {
     quote:
       "Their market research was the most rigorous we've ever commissioned. The expansion plan they crafted positioned us to scale across new regions with real confidence.",
     name: "Baker Industries Limited",
     role: "Management",
+    metric: "Multi-region rollout",
   },
   {
     quote:
       "Business Movers opened doors we didn't know existed. Their market intelligence unlocked new revenue streams and helped us expand into territories we'd long considered out of reach.",
     name: "Dukioluwa Industries Limited",
     role: "Management",
+    metric: "New revenue streams",
   },
 ];
 
