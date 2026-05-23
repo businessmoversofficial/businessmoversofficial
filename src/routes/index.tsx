@@ -123,7 +123,7 @@ function HomePage() {
               <span className="h-1.5 w-1.5 rounded-full bg-primary" /> Our USP
             </span>
             <h1 className="mt-6 font-display text-5xl font-bold leading-[1.05] md:text-7xl">
-              Positioning <span className="text-gradient">Businesses</span> for Excellence
+              Positioning <span className="text-gradient">businesses</span> for excellence.
             </h1>
             <div className="mt-6 max-w-xl space-y-4 text-lg leading-relaxed text-muted-foreground" style={{ textAlign: "justify" }}>
               <p>

@@ -5,9 +5,9 @@ import { ChevronDown, HelpCircle, MessageCircle, Mail, Phone } from "lucide-reac
 export const Route = createFileRoute("/faq")({
   head: () => ({
     meta: [
-      { title: "FAQ , Business Movers" },
-      { name: "description", content: "Frequently asked questions about working with Business Movers , services, pricing, engagement, and more." },
-      { property: "og:title", content: "FAQ , Business Movers" },
+      { title: "FAQ, Business Movers" },
+      { name: "description", content: "Frequently asked questions about working with Business Movers, services, pricing, engagement, and more." },
+      { property: "og:title", content: "FAQ, Business Movers" },
       { property: "og:description", content: "Everything you need to know about working with Business Movers." },
     ],
     scripts: [
