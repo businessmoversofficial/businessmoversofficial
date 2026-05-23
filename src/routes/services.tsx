@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Search, Compass, Target, Megaphone, Globe2, Mail, Share2, BarChart3, ArrowRight } from "lucide-react";
-import boardroom from "@/assets/services-boardroom.webp";
+import tradingFloor from "@/assets/services-traders.png";
 
 export const Route = createFileRoute("/services")({
   head: () => ({
@@ -80,10 +80,10 @@ function ServicesPage() {
           <div className="relative">
             <div className="absolute -inset-4 -z-10 rounded-3xl bg-primary/15 blur-2xl" />
             <img
-              src={boardroom}
-              alt="Strategy session in a modern boardroom"
+              src={tradingFloor}
+              alt="Analysts reviewing live market data over a city skyline"
               loading="lazy"
-              className="aspect-[4/3] w-full rounded-3xl border border-primary/20 object-cover shadow-soft"
+              className="aspect-[4/5] w-full rounded-3xl border border-primary/20 object-cover shadow-soft"
             />
           </div>
         </div>
