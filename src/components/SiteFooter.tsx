@@ -1,11 +1,12 @@
 import { Link } from "@tanstack/react-router";
 import { Instagram, Linkedin, Mail, Phone, Youtube, Twitter, Music2 } from "lucide-react";
 import logo from "@/assets/logo.jpg";
+import { NewsletterSignup } from "@/components/NewsletterSignup";
 
 export function SiteFooter() {
   return (
     <footer className="border-t border-border bg-surface/40">
-      <div className="mx-auto grid max-w-7xl gap-10 px-6 py-16 md:grid-cols-4">
+      <div className="mx-auto grid max-w-7xl gap-10 px-6 py-16 md:grid-cols-5">
         <div className="md:col-span-2">
           <div className="flex items-center gap-3">
             <div className="rounded-md bg-background/40 p-1.5 ring-1 ring-primary/30">
@@ -19,7 +20,7 @@ export function SiteFooter() {
           <p className="mt-5 max-w-md text-sm leading-relaxed text-muted-foreground">
             We are architects of excellence — sincerely passionate and committed to alleviating poverty through business and economic development.
           </p>
-          <div className="mt-6 flex gap-3">
+          <div className="mt-6 flex flex-wrap gap-3">
             <a href="https://www.instagram.com/businessmoversofficial?igsh=YXc0aGRuNmtlemc4" target="_blank" rel="noopener noreferrer" className="rounded-full border border-border p-2.5 text-muted-foreground transition-colors hover:border-primary hover:text-primary" aria-label="Instagram">
               <Instagram className="h-4 w-4" />
             </a>
@@ -47,6 +48,8 @@ export function SiteFooter() {
             <li><Link to="/about" className="text-muted-foreground hover:text-primary">About</Link></li>
             <li><Link to="/services" className="text-muted-foreground hover:text-primary">Services</Link></li>
             <li><Link to="/industries" className="text-muted-foreground hover:text-primary">Industries</Link></li>
+            <li><Link to="/blog" className="text-muted-foreground hover:text-primary">Blog</Link></li>
+            <li><Link to="/faq" className="text-muted-foreground hover:text-primary">FAQ</Link></li>
             <li><Link to="/contact" className="text-muted-foreground hover:text-primary">Contact</Link></li>
           </ul>
         </div>
@@ -58,6 +61,18 @@ export function SiteFooter() {
             <li className="flex items-center gap-2"><Mail className="h-4 w-4 text-primary" /><span>businessmoversofficial@gmail.com</span></li>
             <li className="flex items-center gap-2"><Instagram className="h-4 w-4 text-primary" /><span>@businessmoversofficial</span></li>
           </ul>
+          <ul className="mt-5 space-y-2 text-sm">
+            <li><Link to="/privacy" className="text-muted-foreground hover:text-primary">Privacy Policy</Link></li>
+            <li><Link to="/terms" className="text-muted-foreground hover:text-primary">Terms of Service</Link></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 className="font-display text-sm font-semibold uppercase tracking-wider text-primary">Newsletter</h4>
+          <p className="mt-4 text-sm text-muted-foreground">Weekly playbooks, frameworks, and lead magnets for African founders.</p>
+          <div className="mt-4">
+            <NewsletterSignup source="footer" />
+          </div>
         </div>
       </div>
       <div className="border-t border-border">
