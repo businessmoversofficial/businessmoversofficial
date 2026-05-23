@@ -16,34 +16,79 @@ export type Database = {
     Tables: {
       contact_submissions: {
         Row: {
+          biggest_challenge: string | null
+          business_name: string | null
+          business_stage: string | null
           company: string | null
           created_at: string
           email: string
+          hear_about_us: string | null
           id: string
           industry: string | null
           message: string
+          monthly_revenue: string | null
           name: string
+          preferred_contact: string | null
           status: string
+          success_outcome: string | null
+          years_in_business: string | null
         }
         Insert: {
+          biggest_challenge?: string | null
+          business_name?: string | null
+          business_stage?: string | null
           company?: string | null
           created_at?: string
           email: string
+          hear_about_us?: string | null
           id?: string
           industry?: string | null
           message: string
+          monthly_revenue?: string | null
           name: string
+          preferred_contact?: string | null
           status?: string
+          success_outcome?: string | null
+          years_in_business?: string | null
         }
         Update: {
+          biggest_challenge?: string | null
+          business_name?: string | null
+          business_stage?: string | null
           company?: string | null
           created_at?: string
           email?: string
+          hear_about_us?: string | null
           id?: string
           industry?: string | null
           message?: string
+          monthly_revenue?: string | null
           name?: string
+          preferred_contact?: string | null
           status?: string
+          success_outcome?: string | null
+          years_in_business?: string | null
+        }
+        Relationships: []
+      }
+      newsletter_subscribers: {
+        Row: {
+          created_at: string
+          email: string
+          id: string
+          source: string | null
+        }
+        Insert: {
+          created_at?: string
+          email: string
+          id?: string
+          source?: string | null
+        }
+        Update: {
+          created_at?: string
+          email?: string
+          id?: string
+          source?: string | null
         }
         Relationships: []
       }
