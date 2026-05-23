@@ -46,8 +46,17 @@ function IndustriesPage() {
               We bring sector aware insight to every engagement, pairing universal strategy with the language and rhythm of your industry.
             </p>
           </div>
-          <div>
-            <img src={heroChess} alt="Strategic chess board symbolising industry strategy" loading="lazy" className="aspect-[4/5] w-full rounded-2xl object-cover shadow-soft" />
+          <div className="relative overflow-hidden rounded-2xl shadow-soft">
+            <video
+              src={heroVideo}
+              poster={heroChess}
+              autoPlay
+              muted
+              loop
+              playsInline
+              className="aspect-[4/5] w-full object-cover"
+            />
+            <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-background/40 via-transparent to-transparent" />
           </div>
         </div>
       </section>
