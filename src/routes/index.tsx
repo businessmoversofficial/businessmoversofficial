@@ -48,14 +48,14 @@ const stats = [
 ];
 
 const clients = [
-  "Lagos Realty Group",
-  "Zenith FinPay",
-  "Harvest FMCG",
-  "Adekoya & Partners",
-  "MediCare Plus",
-  "Sentinel Security",
-  "AgroNova",
-  "Hearthstone Hotels",
+  "Noble Guard Security",
+  "Baker Industries Limited",
+  "Oddspace Consult",
+  "Novasmile Dental Studios",
+  "HypeMan Africa",
+  "GE Homes & Properties Limited",
+  "Absolute Grace Investment Limited",
+  "Dukioluwa Industries Limited",
 ];
 
 const testimonials = [
