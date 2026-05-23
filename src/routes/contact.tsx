@@ -94,13 +94,40 @@ function ContactPage() {
                 <div className="mt-1 font-medium">0912 705 0547</div>
               </div>
             </a>
-            <a href="https://instagram.com/businessmoversofficial" className="flex items-start gap-4 rounded-2xl border border-border bg-gradient-card p-6 transition-colors hover:border-primary/50">
+            <a href="https://www.instagram.com/businessmoversofficial?igsh=YXc0aGRuNmtlemc4" target="_blank" rel="noopener noreferrer" className="flex items-start gap-4 rounded-2xl border border-border bg-gradient-card p-6 transition-colors hover:border-primary/50">
               <div className="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-primary/15 text-primary ring-1 ring-primary/30">
                 <Instagram className="h-5 w-5" />
               </div>
               <div>
-                <div className="text-xs uppercase tracking-wider text-muted-foreground">Instagram & TikTok</div>
+                <div className="text-xs uppercase tracking-wider text-muted-foreground">Instagram</div>
                 <div className="mt-1 font-medium">@businessmoversofficial</div>
+              </div>
+            </a>
+            <a href="https://www.tiktok.com/@businessmoversofficial?_r=1&_t=ZS-96bVvAVD9OP" target="_blank" rel="noopener noreferrer" className="flex items-start gap-4 rounded-2xl border border-border bg-gradient-card p-6 transition-colors hover:border-primary/50">
+              <div className="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-primary/15 text-primary ring-1 ring-primary/30">
+                <Music2 className="h-5 w-5" />
+              </div>
+              <div>
+                <div className="text-xs uppercase tracking-wider text-muted-foreground">TikTok</div>
+                <div className="mt-1 font-medium">@businessmoversofficial</div>
+              </div>
+            </a>
+            <a href="https://youtube.com/@businessmovers_official?si=sdAqtIzRlvt_betQ" target="_blank" rel="noopener noreferrer" className="flex items-start gap-4 rounded-2xl border border-border bg-gradient-card p-6 transition-colors hover:border-primary/50">
+              <div className="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-primary/15 text-primary ring-1 ring-primary/30">
+                <Youtube className="h-5 w-5" />
+              </div>
+              <div>
+                <div className="text-xs uppercase tracking-wider text-muted-foreground">YouTube</div>
+                <div className="mt-1 font-medium">@businessmovers_official</div>
+              </div>
+            </a>
+            <a href="https://x.com/business_movers" target="_blank" rel="noopener noreferrer" className="flex items-start gap-4 rounded-2xl border border-border bg-gradient-card p-6 transition-colors hover:border-primary/50">
+              <div className="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-primary/15 text-primary ring-1 ring-primary/30">
+                <Twitter className="h-5 w-5" />
+              </div>
+              <div>
+                <div className="text-xs uppercase tracking-wider text-muted-foreground">X (Twitter)</div>
+                <div className="mt-1 font-medium">@business_movers</div>
               </div>
             </a>
             <a href="https://www.linkedin.com/in/kehinde-adelakun-284790218" target="_blank" rel="noopener noreferrer" className="flex items-start gap-4 rounded-2xl border border-border bg-gradient-card p-6 transition-colors hover:border-primary/50">
