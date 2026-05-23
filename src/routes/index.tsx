@@ -151,6 +151,28 @@ function HomePage() {
         </div>
       </section>
 
+      {/* VIDEO */}
+      <section className="mx-auto max-w-7xl px-6 py-24">
+        <div className="max-w-2xl">
+          <span className="text-xs font-semibold uppercase tracking-[0.25em] text-primary">Watch</span>
+          <h2 className="mt-3 font-display text-4xl font-bold md:text-5xl">
+            See Business Movers <span className="text-gradient">in action.</span>
+          </h2>
+        </div>
+        <div className="mt-10 overflow-hidden rounded-3xl border border-primary/20 bg-gradient-card shadow-soft">
+          <div className="relative aspect-video w-full">
+            <iframe
+              src="https://www.youtube.com/embed/4Wu72VV6kvk"
+              title="Business Movers"
+              loading="lazy"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowFullScreen
+              className="absolute inset-0 h-full w-full"
+            />
+          </div>
+        </div>
+      </section>
+
       {/* SERVICES */}
       <section className="mx-auto max-w-7xl px-6 py-24">
         <div className="flex flex-col items-end justify-between gap-6 md:flex-row">
