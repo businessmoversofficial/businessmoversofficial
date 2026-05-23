@@ -23,7 +23,15 @@ export const Route = createFileRoute("/blog")({
 });
 
 function BlogIndexPage() {
-  const posts = Route.useLoaderData();
+  const posts = Route.useLoaderData() as Array<{
+    slug: string;
+    title: string;
+    excerpt: string;
+    category: string | null;
+    read_time: string | null;
+    lead_magnet_title: string | null;
+    published_at: string | null;
+  }>;
   return (
     <div>
       <section className="border-b border-border">

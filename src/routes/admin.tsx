@@ -152,12 +152,20 @@ function AdminPage() {
           <h1 className="mt-2 font-display text-3xl font-bold md:text-4xl">Contact Submissions</h1>
           <p className="mt-1 text-sm text-muted-foreground">{submissions.length} total</p>
         </div>
-        <button
-          onClick={handleSignOut}
-          className="inline-flex items-center gap-2 rounded-full border border-border px-4 py-2 text-sm text-muted-foreground hover:border-primary hover:text-primary"
-        >
-          <LogOut className="h-4 w-4" /> Sign out
-        </button>
+        <div className="flex flex-wrap gap-2">
+          <Link
+            to="/admin/blog"
+            className="inline-flex items-center gap-2 rounded-full bg-gradient-cyan px-4 py-2 text-sm font-semibold text-primary-foreground shadow-glow"
+          >
+            Manage Blog
+          </Link>
+          <button
+            onClick={handleSignOut}
+            className="inline-flex items-center gap-2 rounded-full border border-border px-4 py-2 text-sm text-muted-foreground hover:border-primary hover:text-primary"
+          >
+            <LogOut className="h-4 w-4" /> Sign out
+          </button>
+        </div>
       </div>
 
       <div className="mt-8 grid gap-6 md:grid-cols-[1fr_1.2fr]">

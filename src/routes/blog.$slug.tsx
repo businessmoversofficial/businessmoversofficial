@@ -79,7 +79,20 @@ function renderParagraph(text: string, i: number) {
 }
 
 function BlogPostPage() {
-  const { post } = Route.useLoaderData();
+  const { post } = Route.useLoaderData() as {
+    post: {
+      slug: string;
+      title: string;
+      excerpt: string;
+      content: string;
+      cover_image: string | null;
+      category: string | null;
+      read_time: string | null;
+      lead_magnet_title: string | null;
+      lead_magnet_description: string | null;
+      published_at: string | null;
+    };
+  };
   const paragraphs = post.content.split(/\n{2,}/).filter((p) => p.trim().length > 0);
 
   return (

@@ -248,39 +248,39 @@ function AdminBlogPage() {
                   const title = e.target.value;
                   setForm((f) => ({ ...f, title, slug: f.id ? f.slug : slugify(title) }));
                 }}
-                className="input"
+                className="w-full rounded-lg border border-input bg-background/60 px-3 py-2 text-sm outline-none focus:border-primary"
               />
             </Field>
             <Field label="Slug *">
-              <input value={form.slug} onChange={(e) => setForm({ ...form, slug: slugify(e.target.value) })} className="input" />
+              <input value={form.slug} onChange={(e) => setForm({ ...form, slug: slugify(e.target.value) })} className="w-full rounded-lg border border-input bg-background/60 px-3 py-2 text-sm outline-none focus:border-primary" />
             </Field>
             <Field label="Category" className="md:col-span-1">
-              <input value={form.category} onChange={(e) => setForm({ ...form, category: e.target.value })} className="input" placeholder="Business Strategy" />
+              <input value={form.category} onChange={(e) => setForm({ ...form, category: e.target.value })} className="w-full rounded-lg border border-input bg-background/60 px-3 py-2 text-sm outline-none focus:border-primary" placeholder="Business Strategy" />
             </Field>
             <Field label="Read time" className="md:col-span-1">
-              <input value={form.read_time} onChange={(e) => setForm({ ...form, read_time: e.target.value })} className="input" placeholder="6 min read" />
+              <input value={form.read_time} onChange={(e) => setForm({ ...form, read_time: e.target.value })} className="w-full rounded-lg border border-input bg-background/60 px-3 py-2 text-sm outline-none focus:border-primary" placeholder="6 min read" />
             </Field>
             <Field label="Cover image URL" className="md:col-span-2">
-              <input value={form.cover_image} onChange={(e) => setForm({ ...form, cover_image: e.target.value })} className="input" placeholder="https://..." />
+              <input value={form.cover_image} onChange={(e) => setForm({ ...form, cover_image: e.target.value })} className="w-full rounded-lg border border-input bg-background/60 px-3 py-2 text-sm outline-none focus:border-primary" placeholder="https://..." />
             </Field>
             <Field label="Excerpt *" className="md:col-span-2">
-              <textarea value={form.excerpt} onChange={(e) => setForm({ ...form, excerpt: e.target.value })} className="input min-h-[80px]" maxLength={500} />
+              <textarea value={form.excerpt} onChange={(e) => setForm({ ...form, excerpt: e.target.value })} className="w-full rounded-lg border border-input bg-background/60 px-3 py-2 text-sm outline-none focus:border-primary min-h-[80px]" maxLength={500} />
             </Field>
             <Field label="Content (Markdown, separate paragraphs with blank lines, **bold** supported) *" className="md:col-span-2">
-              <textarea value={form.content} onChange={(e) => setForm({ ...form, content: e.target.value })} className="input min-h-[280px] font-mono text-xs" />
+              <textarea value={form.content} onChange={(e) => setForm({ ...form, content: e.target.value })} className="w-full rounded-lg border border-input bg-background/60 px-3 py-2 text-sm outline-none focus:border-primary min-h-[280px] font-mono text-xs" />
             </Field>
 
             <div className="md:col-span-2 mt-2 rounded-xl border border-border bg-background/40 p-4">
               <h3 className="text-sm font-semibold">Lead magnet (optional)</h3>
               <div className="mt-3 grid gap-3 md:grid-cols-2">
                 <Field label="Title">
-                  <input value={form.lead_magnet_title} onChange={(e) => setForm({ ...form, lead_magnet_title: e.target.value })} className="input" placeholder="Free Pitch Deck Template" />
+                  <input value={form.lead_magnet_title} onChange={(e) => setForm({ ...form, lead_magnet_title: e.target.value })} className="w-full rounded-lg border border-input bg-background/60 px-3 py-2 text-sm outline-none focus:border-primary" placeholder="Free Pitch Deck Template" />
                 </Field>
                 <Field label="CTA button text">
-                  <input value={form.lead_magnet_cta} onChange={(e) => setForm({ ...form, lead_magnet_cta: e.target.value })} className="input" placeholder="Send me the template" />
+                  <input value={form.lead_magnet_cta} onChange={(e) => setForm({ ...form, lead_magnet_cta: e.target.value })} className="w-full rounded-lg border border-input bg-background/60 px-3 py-2 text-sm outline-none focus:border-primary" placeholder="Send me the template" />
                 </Field>
                 <Field label="Description" className="md:col-span-2">
-                  <textarea value={form.lead_magnet_description} onChange={(e) => setForm({ ...form, lead_magnet_description: e.target.value })} className="input min-h-[60px]" />
+                  <textarea value={form.lead_magnet_description} onChange={(e) => setForm({ ...form, lead_magnet_description: e.target.value })} className="w-full rounded-lg border border-input bg-background/60 px-3 py-2 text-sm outline-none focus:border-primary min-h-[60px]" />
                 </Field>
               </div>
             </div>
