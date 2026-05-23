@@ -128,6 +128,14 @@ function BlogPostPage() {
         {paragraphs.map(renderParagraph)}
       </div>
 
+      <div className="mt-10 border-t border-border pt-6">
+        <ShareButtons
+          url={`https://businessmoversofficial.lovable.app/blog/${post.slug}`}
+          title={post.title}
+          excerpt={post.excerpt}
+        />
+      </div>
+
       {post.lead_magnet_title && (
         <div className="mt-12 rounded-3xl border border-primary/30 bg-gradient-card p-8 shadow-glow">
           <div className="inline-flex items-center gap-2 rounded-full border border-primary/40 bg-primary/10 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-primary">
