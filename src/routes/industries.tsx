@@ -1,5 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Building2, Banknote, ShoppingBasket, Scale, Stethoscope, ShieldCheck, Umbrella, Wheat, Hotel, GraduationCap } from "lucide-react";
+import realEstateImg from "@/assets/industry-realestate.jpeg";
+import fintechImg from "@/assets/industry-fintech.jpg";
+import fmcgImg from "@/assets/industry-fmcg.jpg";
 
 export const Route = createFileRoute("/industries")({
   head: () => ({
