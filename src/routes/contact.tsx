@@ -4,6 +4,7 @@ import { z } from "zod";
 import { Mail, Phone, Instagram, Linkedin, MapPin, Send, CheckCircle2, Loader2, Youtube, Twitter, Music2 } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
+import contactPortrait from "@/assets/contact-portrait.png";
 
 export const Route = createFileRoute("/contact")({
   head: () => ({
