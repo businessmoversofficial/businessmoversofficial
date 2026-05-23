@@ -103,15 +103,15 @@ function ContactPage() {
                 <div className="mt-1 font-medium">@businessmoversofficial</div>
               </div>
             </a>
-            <div className="flex items-start gap-4 rounded-2xl border border-border bg-gradient-card p-6">
+            <a href="https://www.linkedin.com/in/kehinde-adelakun-284790218" target="_blank" rel="noopener noreferrer" className="flex items-start gap-4 rounded-2xl border border-border bg-gradient-card p-6 transition-colors hover:border-primary/50">
               <div className="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-primary/15 text-primary ring-1 ring-primary/30">
                 <Linkedin className="h-5 w-5" />
               </div>
               <div>
                 <div className="text-xs uppercase tracking-wider text-muted-foreground">LinkedIn</div>
-                <div className="mt-1 font-medium">Business Movers</div>
+                <div className="mt-1 font-medium">Kehinde Adelakun</div>
               </div>
-            </div>
+            </a>
             <div className="flex items-start gap-4 rounded-2xl border border-border bg-gradient-card p-6">
               <div className="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-primary/15 text-primary ring-1 ring-primary/30">
                 <MapPin className="h-5 w-5" />
