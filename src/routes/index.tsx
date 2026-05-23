@@ -126,10 +126,10 @@ function HomePage() {
               Positioning <span className="text-gradient">Businesses</span> for Excellence
             </h1>
             <div className="mt-6 max-w-xl space-y-4 text-lg leading-relaxed text-muted-foreground" style={{ textAlign: "justify" }}>
-              <p>We don't just consult. We move businesses.</p>
               <p>
                 Most consultants hand you a report and disappear. Business Movers co builds your strategy, stays through execution, and measures success the only way that matters; by the growth you actually see.
               </p>
+              <p>We don't just consult. We move businesses.</p>
             </div>
             <div className="mt-10 flex flex-wrap gap-4">
               <Link
