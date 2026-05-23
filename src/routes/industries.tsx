@@ -1,5 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Building2, Banknote, ShoppingBasket, Scale, Stethoscope, ShieldCheck, Umbrella, Wheat, Hotel, GraduationCap } from "lucide-react";
+import realEstateImg from "@/assets/industry-realestate.jpeg";
+import fintechImg from "@/assets/industry-fintech.jpg";
+import fmcgImg from "@/assets/industry-fmcg.jpg";
 
 export const Route = createFileRoute("/industries")({
   head: () => ({
@@ -36,6 +39,32 @@ function IndustriesPage() {
           <p className="mt-6 max-w-2xl text-lg text-muted-foreground">
             We bring sector aware insight to every engagement, pairing universal strategy with the language and rhythm of your industry.
           </p>
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-7xl px-6 pt-20">
+        <div className="mb-4 flex items-end justify-between">
+          <div>
+            <span className="text-xs font-semibold uppercase tracking-[0.25em] text-primary">Industries in motion</span>
+            <h2 className="mt-3 font-display text-3xl font-bold md:text-4xl">Where our work shows up.</h2>
+          </div>
+        </div>
+        <div className="grid gap-6 md:grid-cols-3">
+          {[
+            { img: realEstateImg, label: "Real Estate", caption: "New landowners onboarded with brand-led acquisition systems." },
+            { img: fintechImg, label: "Fintech", caption: "Positioning and growth strategy for data-driven financial products." },
+            { img: fmcgImg, label: "FMCG", caption: "Distribution strategy and demand creation for fast-moving goods." },
+          ].map((f) => (
+            <figure key={f.label} className="group overflow-hidden rounded-2xl border border-border bg-card shadow-soft transition-all hover:-translate-y-1 hover:border-primary/50 hover:shadow-glow">
+              <div className="aspect-[4/3] overflow-hidden">
+                <img src={f.img} alt={f.label} loading="lazy" className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" />
+              </div>
+              <figcaption className="p-5">
+                <div className="font-display text-lg font-semibold text-primary">{f.label}</div>
+                <p className="mt-1.5 text-sm leading-relaxed text-muted-foreground">{f.caption}</p>
+              </figcaption>
+            </figure>
+          ))}
         </div>
       </section>
 

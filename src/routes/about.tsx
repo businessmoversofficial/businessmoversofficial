@@ -1,6 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Award, Lightbulb, ShieldCheck, Users, Target, Zap, Sparkles, Linkedin, Briefcase, Megaphone, Scale, Wallet, BarChart3, Palette, TrendingUp } from "lucide-react";
 import founder from "@/assets/founder-portrait.jpg";
+import handshake from "@/assets/home-handshake.jpg";
+import businessmen from "@/assets/about-businessmen.jpg";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
@@ -37,14 +39,25 @@ function AboutPage() {
   return (
     <div className="theme-clean-white">
       <section className="relative border-b border-border">
-        <div className="mx-auto max-w-7xl px-6 py-20 md:py-28">
-          <span className="text-xs font-semibold uppercase tracking-[0.25em] text-primary">About Business Movers</span>
-          <h1 className="mt-4 max-w-4xl font-display text-5xl font-bold leading-tight md:text-7xl">
-            Architects of <span className="text-gradient">excellence.</span>
-          </h1>
-          <p className="mt-6 max-w-3xl text-lg leading-relaxed text-muted-foreground" style={{ textAlign: "justify" }}>
-            Business Movers was born out of the need to fix the gaps faced by business owners and entrepreneurs. We are more than just consultants, we are sincerely passionate and committed to alleviating poverty through business and economic development.
-          </p>
+        <div className="mx-auto grid max-w-7xl gap-12 px-6 py-20 md:py-28 md:grid-cols-[1.1fr_1fr] md:items-center">
+          <div>
+            <span className="text-xs font-semibold uppercase tracking-[0.25em] text-primary">About Business Movers</span>
+            <h1 className="mt-4 max-w-4xl font-display text-5xl font-bold leading-tight md:text-7xl">
+              Architects of <span className="text-gradient">excellence.</span>
+            </h1>
+            <p className="mt-6 max-w-3xl text-lg leading-relaxed text-muted-foreground" style={{ textAlign: "justify" }}>
+              Business Movers was born out of the need to fix the gaps faced by business owners and entrepreneurs. We are more than just consultants, we are sincerely passionate and committed to alleviating poverty through business and economic development.
+            </p>
+          </div>
+          <div className="relative">
+            <div className="absolute -inset-4 -z-10 rounded-3xl bg-primary/15 blur-2xl" />
+            <img
+              src={handshake}
+              alt="Global business partnership, two professionals shaking hands"
+              loading="lazy"
+              className="aspect-[4/5] w-full rounded-3xl border border-primary/20 object-cover shadow-soft"
+            />
+          </div>
         </div>
       </section>
 
@@ -98,6 +111,25 @@ function AboutPage() {
             >
               Connect with Kehinde on LinkedIn <Linkedin className="h-4 w-4" />
             </a>
+          </div>
+        </div>
+      </section>
+
+      {/* WORK IMAGE BAND */}
+      <section className="mx-auto max-w-7xl px-6 pt-20">
+        <div className="relative overflow-hidden rounded-3xl border border-border shadow-soft">
+          <img
+            src={businessmen}
+            alt="Business Movers strategy session in progress"
+            loading="lazy"
+            className="aspect-[21/9] w-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-tr from-primary/40 via-transparent to-transparent" />
+          <div className="absolute bottom-0 left-0 max-w-md p-8 md:p-10">
+            <span className="text-xs font-semibold uppercase tracking-[0.25em] text-white/90">In the room</span>
+            <p className="mt-2 font-display text-xl font-bold text-white md:text-2xl">
+              Co-building strategy with founders, not handing over reports.
+            </p>
           </div>
         </div>
       </section>
