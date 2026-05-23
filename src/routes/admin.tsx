@@ -1,8 +1,10 @@
 import { createFileRoute, useNavigate, Link } from "@tanstack/react-router";
+import { useServerFn } from "@tanstack/react-start";
 import { useEffect, useState } from "react";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
 import { Loader2, LogOut, Mail, Trash2, Inbox } from "lucide-react";
+import { deleteSubmission as deleteSubmissionFn, getAdminDashboard, updateSubmissionStatus } from "@/lib/admin.functions";
 
 export const Route = createFileRoute("/admin")({
   head: () => ({
@@ -27,6 +29,9 @@ type Submission = {
 
 function AdminPage() {
   const navigate = useNavigate();
+  const fetchDashboard = useServerFn(getAdminDashboard);
+  const updateStatusFn = useServerFn(updateSubmissionStatus);
+  const removeSubmissionFn = useServerFn(deleteSubmissionFn);
   const [checking, setChecking] = useState(true);
   const [isAdmin, setIsAdmin] = useState(false);
   const [submissions, setSubmissions] = useState<Submission[]>([]);
@@ -37,21 +42,19 @@ function AdminPage() {
     let mounted = true;
 
     const init = async () => {
-      const { data: sessionData } = await supabase.auth.getSession();
-      if (!sessionData.session) {
+      const { data: userData, error: userError } = await supabase.auth.getUser();
+      if (userError || !userData.user) {
         navigate({ to: "/login" });
         return;
       }
-      const userId = sessionData.session.user.id;
-      const { data: roles } = await supabase
-        .from("user_roles")
-        .select("role")
-        .eq("user_id", userId);
-      const admin = (roles ?? []).some((r) => r.role === "admin");
+
+      const dashboard = await fetchDashboard();
+      const admin = dashboard.isAdmin;
       if (!mounted) return;
       setIsAdmin(admin);
+      setSubmissions(dashboard.submissions as Submission[]);
+      setLoading(false);
       setChecking(false);
-      if (admin) await loadSubmissions();
     };
 
     init();
@@ -64,17 +67,14 @@ function AdminPage() {
       mounted = false;
       subscription.unsubscribe();
     };
-  }, [navigate]);
+  }, [fetchDashboard, navigate]);
 
   async function loadSubmissions() {
     setLoading(true);
-    const { data, error } = await supabase
-      .from("contact_submissions")
-      .select("*")
-      .order("created_at", { ascending: false });
+    const { isAdmin: admin, submissions: data } = await fetchDashboard();
     setLoading(false);
-    if (error) {
-      toast.error("Failed to load submissions");
+    if (!admin) {
+      setIsAdmin(false);
       return;
     }
     setSubmissions(data as Submission[]);
@@ -86,8 +86,9 @@ function AdminPage() {
   }
 
   async function updateStatus(id: string, status: string) {
-    const { error } = await supabase.from("contact_submissions").update({ status }).eq("id", id);
-    if (error) {
+    try {
+      await updateStatusFn({ data: { id, status: status as "new" | "in_progress" | "done" | "archived" } });
+    } catch {
       toast.error("Failed to update");
       return;
     }
@@ -97,8 +98,9 @@ function AdminPage() {
 
   async function deleteSubmission(id: string) {
     if (!confirm("Delete this submission?")) return;
-    const { error } = await supabase.from("contact_submissions").delete().eq("id", id);
-    if (error) {
+    try {
+      await removeSubmissionFn({ data: { id } });
+    } catch {
       toast.error("Failed to delete");
       return;
     }
