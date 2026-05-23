@@ -74,9 +74,9 @@ const testimonials = [
   },
   {
     quote:
-      "Sector-aware, deeply strategic, and refreshingly honest. They told us what we needed to hear — and built the roadmap that grew our patient base quarter over quarter.",
-    name: "Novasmile Dental Studios",
-    role: "Clinic Leadership",
+      "Business Movers opened doors we didn't know existed. Their market intelligence unlocked new revenue streams and helped us expand into territories we'd long considered out of reach.",
+    name: "Dukioluwa Industries Limited",
+    role: "Management",
   },
 ];
 
