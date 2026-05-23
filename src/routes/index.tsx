@@ -287,6 +287,72 @@ function HomePage() {
         </div>
       </section>
 
+      {/* BUSINESS MOVERS PRODUCTS */}
+      <section className="border-b border-border bg-background">
+        <div className="mx-auto max-w-7xl px-6 py-24">
+          <div className="max-w-2xl">
+            <span className="text-xs font-semibold uppercase tracking-[0.25em] text-primary">Business Movers Products</span>
+            <h2 className="mt-3 font-display text-4xl font-bold md:text-5xl">
+              Tools that <span className="text-gradient">move you forward.</span>
+            </h2>
+          </div>
+
+          <div className="mt-14 grid gap-10 overflow-hidden rounded-3xl border border-primary/20 bg-gradient-card p-8 md:grid-cols-2 md:items-center md:p-12">
+            <div className="relative">
+              <div className="absolute -inset-4 -z-10 rounded-3xl bg-gradient-cyan opacity-20 blur-2xl" />
+              <div className="overflow-hidden rounded-2xl border border-primary/20 bg-background/40 shadow-soft">
+                <img
+                  src="/ebook-side-hustles-cover.jpg"
+                  alt="Side Hustles For Nigerian House Wives — eBook mockup"
+                  className="h-full w-full object-cover"
+                  onError={(e) => { (e.currentTarget as HTMLImageElement).style.display = 'none'; }}
+                />
+              </div>
+            </div>
+            <div>
+              <span className="inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.2em] text-primary">
+                eBook
+              </span>
+              <h3 className="mt-4 font-display text-3xl font-bold md:text-4xl">
+                Side Hustles For Nigerian House Wives
+              </h3>
+              <p className="mt-4 text-muted-foreground leading-relaxed">
+                Our eBook gives you <strong className="text-foreground">64 practical side hustle ideas across 12 categories</strong> — designed specifically for busy Nigerian women looking to build income while managing home.
+              </p>
+
+              <div className="mt-6 flex items-baseline gap-3">
+                <span className="font-display text-4xl font-bold text-primary">₦6,999</span>
+                <span className="text-xs uppercase tracking-wider text-muted-foreground">one-time</span>
+              </div>
+
+              <div className="mt-6 flex flex-wrap gap-3">
+                <a
+                  href="https://selar.com/7kz1856l77"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 rounded-full bg-gradient-cyan px-7 py-3.5 text-sm font-semibold text-primary-foreground shadow-glow transition-transform hover:scale-105"
+                >
+                  Get it here <ArrowRight className="h-4 w-4" />
+                </a>
+              </div>
+
+              <div className="mt-8 rounded-2xl border border-border bg-background/50 p-5 text-sm">
+                <div className="text-xs font-semibold uppercase tracking-[0.2em] text-primary">Pay direct (optional)</div>
+                <dl className="mt-3 grid gap-2 text-foreground/90">
+                  <div className="flex justify-between gap-4"><dt className="text-muted-foreground">Bank</dt><dd className="font-medium">Providus Bank</dd></div>
+                  <div className="flex justify-between gap-4"><dt className="text-muted-foreground">Account Name</dt><dd className="font-medium">Swift Business Movers</dd></div>
+                  <div className="flex justify-between gap-4"><dt className="text-muted-foreground">Account Number</dt><dd className="font-medium">1306896393</dd></div>
+                </dl>
+                <p className="mt-3 text-xs text-muted-foreground">
+                  After payment, send proof + email and we'll deliver instantly.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
       {/* TESTIMONIALS */}
       <section className="border-b border-border bg-surface/30">
         <div className="mx-auto max-w-7xl px-6 py-24">
