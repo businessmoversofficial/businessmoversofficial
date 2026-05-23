@@ -4,7 +4,7 @@ import { Search, Compass, Target, Megaphone, Globe2, Mail, Share2, BarChart3, Ar
 export const Route = createFileRoute("/services")({
   head: () => ({
     meta: [
-      { title: "Services — Business Movers" },
+      { title: "Services, Business Movers" },
       { name: "description", content: "Market research, strategic planning, marketing & sales strategy, advertising, and end-to-end digital growth services." },
     ],
   }),
@@ -22,7 +22,7 @@ const services = [
     icon: Compass,
     title: "Strategic Planning",
     desc: "Planning is an underrated skill. We assist you in creating market penetration plans, business development plans and growth roadmaps tailored to your stage.",
-    points: ["SWOT & PESTLE analysis", "Market & potential analysis", "Cost & benefit analysis", "Short and long-term roadmaps"],
+    points: ["SWOT & PESTLE analysis", "Market & potential analysis", "Cost & benefit analysis", "Short and long term roadmaps"],
   },
   {
     icon: Target,
@@ -33,7 +33,7 @@ const services = [
   {
     icon: Megaphone,
     title: "Advertising Strategy",
-    desc: "We design campaigns from creative through to targeting and KPI tracking — clicks, conversions and impressions become signals you can act on.",
+    desc: "We design campaigns from creative through to targeting and KPI tracking, clicks, conversions and impressions become signals you can act on.",
     points: ["Campaign design & creative", "Audience targeting", "Performance reporting", "Optimisation & scaling"],
   },
   {
@@ -51,13 +51,13 @@ const services = [
   {
     icon: BarChart3,
     title: "Search Engine Optimization",
-    desc: "Improve visibility and ranking in search results — increasing organic traffic by making your site more relevant and authoritative.",
+    desc: "Improve visibility and ranking in search results, increasing organic traffic by making your site more relevant and authoritative.",
     points: ["On-page & off-page SEO", "Technical SEO", "Local SEO", "Algorithm monitoring"],
   },
   {
     icon: Share2,
     title: "Social Media Marketing",
-    desc: "We drive your business across Instagram, Facebook, X and LinkedIn — building community, authority and measurable engagement.",
+    desc: "We drive your business across Instagram, Facebook, X and LinkedIn, building community, authority and measurable engagement.",
     points: ["Content calendars", "Community management", "Paid social", "Influencer partnerships"],
   },
 ];
@@ -72,7 +72,7 @@ function ServicesPage() {
             A comprehensive suite for <span className="text-gradient">sustainable growth.</span>
           </h1>
           <p className="mt-6 max-w-2xl text-lg text-muted-foreground">
-            From the first market signal to the long-term expansion plan — every engagement is tailored to your business, your market, and your moment.
+            From the first market signal to the long term expansion plan, every engagement is tailored to your business, your market, and your moment.
           </p>
         </div>
       </section>

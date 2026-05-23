@@ -22,8 +22,8 @@ import ebookCover from "@/assets/ebook-side-hustles-cover.jpg";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Business Movers — Positioning Businesses for Excellence" },
-      { name: "description", content: "Tailored strategies, market research, and digital growth services that position your business for long-term excellence." },
+      { title: "Business Movers, Positioning Businesses for Excellence" },
+      { name: "description", content: "Tailored strategies, market research, and digital growth services that position your business for long term excellence." },
     ],
   }),
   component: HomePage,
@@ -140,14 +140,14 @@ function HomePage() {
             <div className="relative overflow-hidden rounded-3xl border border-primary/20 bg-gradient-card shadow-soft">
               <img
                 src={founder}
-                alt="Adelakun Kehinde — Founder, Business Movers"
+                alt="Adelakun Kehinde, Founder, Business Movers"
                 width={1024}
                 height={1280}
                 className="h-full w-full object-cover"
               />
               <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-background via-background/80 to-transparent p-6">
                 <div className="font-display text-lg font-bold text-primary">Adelakun Kehinde</div>
-                <div className="text-xs uppercase tracking-wider text-muted-foreground">B.Sc., M.Sc., MNITP, RTP — Founder</div>
+                <div className="text-xs uppercase tracking-wider text-muted-foreground">B.Sc., M.Sc., MNITP, RTP, Founder</div>
               </div>
             </div>
           </div>
@@ -298,7 +298,7 @@ function HomePage() {
                 Ten industries. <br />One standard: <span className="text-gradient">excellence.</span>
               </h2>
               <p className="mt-5 max-w-md text-muted-foreground">
-                Whether you're scaling a fintech, building a real-estate brand, or modernising a law firm — we bring sector-aware strategy to every engagement.
+                Whether you're scaling a fintech, building a real estate brand, or modernising a law firm, we bring sector aware strategy to every engagement.
               </p>
               <Link to="/industries" className="mt-8 inline-flex items-center gap-2 text-sm font-semibold text-primary">
                 See all industries <ArrowRight className="h-4 w-4" />
@@ -353,7 +353,7 @@ function HomePage() {
               <div className="overflow-hidden rounded-2xl border border-primary/20 bg-background/40 shadow-soft">
                 <img
                   src={ebookCover}
-                  alt="Side Hustles For Nigerian House Wives — eBook mockup"
+                  alt="Side Hustles For Nigerian House Wives, eBook mockup"
                   className="h-full w-full object-cover"
                 />
               </div>
@@ -366,7 +366,7 @@ function HomePage() {
                 Side Hustles For Nigerian House Wives
               </h3>
               <p className="mt-4 text-muted-foreground leading-relaxed">
-                Our eBook gives you <strong className="text-foreground">64 practical side hustle ideas across 12 categories</strong> — designed specifically for busy Nigerian women looking to build income while managing home.
+                Our eBook gives you <strong className="text-foreground">64 practical side hustle ideas across 12 categories</strong>, designed specifically for busy Nigerian women looking to build income while managing home.
               </p>
 
               <div className="mt-6 flex items-baseline gap-3">

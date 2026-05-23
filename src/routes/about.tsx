@@ -5,8 +5,8 @@ import founder from "@/assets/founder-portrait.jpg";
 export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
-      { title: "About — Business Movers" },
-      { name: "description", content: "Architects of excellence — passionate and committed to alleviating poverty through business and economic development." },
+      { title: "About, Business Movers" },
+      { name: "description", content: "Architects of excellence, passionate and committed to alleviating poverty through business and economic development." },
     ],
   }),
   component: AboutPage,
@@ -15,7 +15,7 @@ export const Route = createFileRoute("/about")({
 const values = [
   { icon: Award, title: "Excellence", desc: "We consistently strive for the highest standards of quality, continuously improving via strategic & ingenious business development ideas." },
   { icon: Lightbulb, title: "Innovation", desc: "We embrace creative thinking and innovative solutions to stay at the forefront of industry trends." },
-  { icon: ShieldCheck, title: "Integrity", desc: "Honesty, transparency, and ethical conduct in all interactions — building trust with every partner." },
+  { icon: ShieldCheck, title: "Integrity", desc: "Honesty, transparency, and ethical conduct in all interactions, building trust with every partner." },
   { icon: Users, title: "Client-Centric", desc: "Our clients' success is at the heart of everything we do. Tailored solutions, every time." },
   { icon: Target, title: "Results-Driven", desc: "Focused on delivering measurable outcomes and helping clients achieve their objectives." },
   { icon: Zap, title: "Adaptability", desc: "We thrive in dynamic environments, helping our clients navigate evolving markets and challenges." },
@@ -33,7 +33,7 @@ function AboutPage() {
             Architects of <span className="text-gradient">excellence.</span>
           </h1>
           <p className="mt-6 max-w-3xl text-lg leading-relaxed text-muted-foreground">
-            Business Movers was born out of the need to fix the gaps faced by business owners and entrepreneurs. We are more than just consultants — we are sincerely passionate and committed to alleviating poverty through business and economic development.
+            Business Movers was born out of the need to fix the gaps faced by business owners and entrepreneurs. We are more than just consultants, we are sincerely passionate and committed to alleviating poverty through business and economic development.
           </p>
         </div>
       </section>
@@ -71,7 +71,7 @@ function AboutPage() {
               50% of businesses don't survive five years. <br /><span className="text-gradient">We're changing that.</span>
             </h2>
             <p className="mt-6 leading-relaxed text-muted-foreground">
-              Business growth is directly linked to employment, poverty alleviation, and GDP contribution. After years of research, we identified the patterns shared by businesses that fail and those that stagnate — leadership gaps, weak market demand, competitive pressure, inadequate planning, poor financial management.
+              Business growth is directly linked to employment, poverty alleviation, and GDP contribution. After years of research, we identified the patterns shared by businesses that fail and those that stagnate, leadership gaps, weak market demand, competitive pressure, inadequate planning, poor financial management.
             </p>
             <p className="mt-4 leading-relaxed text-muted-foreground">
               These problems are fixable. Business Movers exists to fix them.
