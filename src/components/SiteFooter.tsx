@@ -23,7 +23,7 @@ export function SiteFooter() {
             <a href="https://instagram.com/businessmoversofficial" className="rounded-full border border-border p-2.5 text-muted-foreground transition-colors hover:border-primary hover:text-primary" aria-label="Instagram">
               <Instagram className="h-4 w-4" />
             </a>
-            <a href="https://linkedin.com" className="rounded-full border border-border p-2.5 text-muted-foreground transition-colors hover:border-primary hover:text-primary" aria-label="LinkedIn">
+            <a href="https://www.linkedin.com/in/kehinde-adelakun-284790218" target="_blank" rel="noopener noreferrer" className="rounded-full border border-border p-2.5 text-muted-foreground transition-colors hover:border-primary hover:text-primary" aria-label="LinkedIn">
               <Linkedin className="h-4 w-4" />
             </a>
             <a href="mailto:businessmoversofficial@gmail.com" className="rounded-full border border-border p-2.5 text-muted-foreground transition-colors hover:border-primary hover:text-primary" aria-label="Email">
