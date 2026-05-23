@@ -9,9 +9,12 @@ import {
   Search,
   Target,
   CheckCircle2,
+  Quote,
+  Star,
 } from "lucide-react";
 import heroBg from "@/assets/hero-bg.jpg";
 import founder from "@/assets/founder-portrait.jpg";
+
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -43,6 +46,39 @@ const stats = [
   { v: "100%", l: "Tailored Strategy" },
   { v: "24/7", l: "Client Support" },
 ];
+
+const clients = [
+  "Lagos Realty Group",
+  "Zenith FinPay",
+  "Harvest FMCG",
+  "Adekoya & Partners",
+  "MediCare Plus",
+  "Sentinel Security",
+  "AgroNova",
+  "Hearthstone Hotels",
+];
+
+const testimonials = [
+  {
+    quote:
+      "Business Movers rebuilt our go-to-market from the ground up. Within two quarters we doubled qualified leads and finally had a strategy our board could stand behind.",
+    name: "Chinwe Okafor",
+    role: "Managing Director, Lagos Realty Group",
+  },
+  {
+    quote:
+      "Their market research was the most rigorous we've ever commissioned. The pitch deck they crafted helped us close our Series A in eight weeks.",
+    name: "Tunde Bakare",
+    role: "Co-founder & CEO, Zenith FinPay",
+  },
+  {
+    quote:
+      "Sector-aware, deeply strategic, and refreshingly honest. They told us what we needed to hear — and built the roadmap to fix it.",
+    name: "Dr. Amaka Eze",
+    role: "Director of Operations, MediCare Plus",
+  },
+];
+
 
 function HomePage() {
   return (
@@ -172,7 +208,64 @@ function HomePage() {
         </div>
       </section>
 
+      {/* CLIENT LOGOS */}
+      <section className="border-b border-border bg-background">
+        <div className="mx-auto max-w-7xl px-6 py-16">
+          <div className="text-center">
+            <span className="text-xs font-semibold uppercase tracking-[0.25em] text-primary">Trusted by</span>
+            <h2 className="mt-3 font-display text-2xl font-bold md:text-3xl">
+              Brands across ten industries
+            </h2>
+          </div>
+          <div className="mt-10 grid grid-cols-2 gap-px overflow-hidden rounded-2xl border border-border bg-border/60 sm:grid-cols-3 md:grid-cols-4">
+            {clients.map((c) => (
+              <div
+                key={c}
+                className="flex h-24 items-center justify-center bg-background px-4 text-center font-display text-sm font-semibold uppercase tracking-[0.18em] text-muted-foreground transition-colors hover:text-primary"
+              >
+                {c}
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* TESTIMONIALS */}
+      <section className="border-b border-border bg-surface/30">
+        <div className="mx-auto max-w-7xl px-6 py-24">
+          <div className="max-w-2xl">
+            <span className="text-xs font-semibold uppercase tracking-[0.25em] text-primary">What clients say</span>
+            <h2 className="mt-3 font-display text-4xl font-bold md:text-5xl">
+              Results our partners <span className="text-gradient">stand behind.</span>
+            </h2>
+          </div>
+          <div className="mt-14 grid gap-6 md:grid-cols-3">
+            {testimonials.map((t) => (
+              <figure
+                key={t.name}
+                className="relative flex flex-col rounded-2xl border border-border bg-gradient-card p-8 transition-all hover:-translate-y-1 hover:border-primary/50 hover:shadow-glow"
+              >
+                <Quote className="h-7 w-7 text-primary/60" />
+                <blockquote className="mt-5 flex-1 text-sm leading-relaxed text-foreground/90">
+                  "{t.quote}"
+                </blockquote>
+                <div className="mt-6 flex gap-1 text-primary">
+                  {Array.from({ length: 5 }).map((_, i) => (
+                    <Star key={i} className="h-3.5 w-3.5 fill-current" />
+                  ))}
+                </div>
+                <figcaption className="mt-4 border-t border-border pt-4">
+                  <div className="font-display text-sm font-semibold">{t.name}</div>
+                  <div className="text-xs text-muted-foreground">{t.role}</div>
+                </figcaption>
+              </figure>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* CTA */}
+
       <section className="mx-auto max-w-7xl px-6 py-24">
         <div className="relative overflow-hidden rounded-3xl border border-primary/30 bg-gradient-card p-10 md:p-16">
           <div className="absolute -right-20 -top-20 h-64 w-64 rounded-full bg-primary/20 blur-3xl" />
