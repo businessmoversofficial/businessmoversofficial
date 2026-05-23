@@ -32,7 +32,7 @@ function AboutPage() {
           <h1 className="mt-4 max-w-4xl font-display text-5xl font-bold leading-tight md:text-7xl">
             Architects of <span className="text-gradient">excellence.</span>
           </h1>
-          <p className="mt-6 max-w-3xl text-lg leading-relaxed text-muted-foreground">
+          <p className="mt-6 max-w-3xl text-lg leading-relaxed text-muted-foreground" style={{ textAlign: "justify" }}>
             Business Movers was born out of the need to fix the gaps faced by business owners and entrepreneurs. We are more than just consultants, we are sincerely passionate and committed to alleviating poverty through business and economic development.
           </p>
         </div>
@@ -44,14 +44,14 @@ function AboutPage() {
           <div className="rounded-3xl border border-border bg-gradient-card p-10">
             <Sparkles className="h-8 w-8 text-primary" />
             <h2 className="mt-5 font-display text-3xl font-bold">Our Mission</h2>
-            <p className="mt-4 leading-relaxed text-muted-foreground">
+            <p className="mt-4 leading-relaxed text-muted-foreground" style={{ textAlign: "justify" }}>
               To position businesses for excellence by providing tailored strategies, innovative solutions, and expert guidance. We are dedicated to helping our clients achieve their highest potential, driving revenue growth, and fostering a culture of continuous improvement.
             </p>
           </div>
           <div className="rounded-3xl border border-primary/30 bg-gradient-card p-10 shadow-glow">
             <Target className="h-8 w-8 text-primary" />
             <h2 className="mt-5 font-display text-3xl font-bold">Our Vision</h2>
-            <p className="mt-4 leading-relaxed text-muted-foreground">
+            <p className="mt-4 leading-relaxed text-muted-foreground" style={{ textAlign: "justify" }}>
               To be the industry leader in business development consultancy, setting the standard for excellence and innovation. We envision a future where every business we touch not only thrives but defines the benchmarks of success.
             </p>
           </div>
@@ -70,10 +70,10 @@ function AboutPage() {
             <h2 className="mt-3 font-display text-4xl font-bold leading-tight md:text-5xl">
               50% of businesses don't survive five years. <br /><span className="text-gradient">We're changing that.</span>
             </h2>
-            <p className="mt-6 leading-relaxed text-muted-foreground">
+            <p className="mt-6 leading-relaxed text-muted-foreground" style={{ textAlign: "justify" }}>
               Business growth is directly linked to employment, poverty alleviation, and GDP contribution. After years of research, we identified the patterns shared by businesses that fail and those that stagnate, leadership gaps, weak market demand, competitive pressure, inadequate planning, poor financial management.
             </p>
-            <p className="mt-4 leading-relaxed text-muted-foreground">
+            <p className="mt-4 leading-relaxed text-muted-foreground" style={{ textAlign: "justify" }}>
               These problems are fixable. Business Movers exists to fix them.
             </p>
             <a

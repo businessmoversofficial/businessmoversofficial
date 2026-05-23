@@ -297,7 +297,7 @@ function HomePage() {
               <h2 className="mt-3 font-display text-4xl font-bold md:text-5xl">
                 Ten industries. <br />One standard: <span className="text-gradient">excellence.</span>
               </h2>
-              <p className="mt-5 max-w-md text-muted-foreground">
+              <p className="mt-5 max-w-md text-muted-foreground" style={{ textAlign: "justify" }}>
                 Whether you're scaling a fintech, building a real estate brand, or modernising a law firm, we bring sector aware strategy to every engagement.
               </p>
               <Link to="/industries" className="mt-8 inline-flex items-center gap-2 text-sm font-semibold text-primary">
@@ -365,7 +365,7 @@ function HomePage() {
               <h3 className="mt-4 font-display text-3xl font-bold md:text-4xl">
                 Side Hustles For Nigerian House Wives
               </h3>
-              <p className="mt-4 text-muted-foreground leading-relaxed">
+              <p className="mt-4 text-muted-foreground leading-relaxed" style={{ textAlign: "justify" }}>
                 Our eBook gives you <strong className="text-foreground">64 practical side hustle ideas across 12 categories</strong>, designed specifically for busy Nigerian women looking to build income while managing home.
               </p>
 
@@ -447,7 +447,7 @@ function HomePage() {
               <h2 className="font-display text-3xl font-bold leading-tight md:text-5xl">
                 Contact us today for a <span className="text-gradient">30-minute</span> free consultation.
               </h2>
-              <p className="mt-4 max-w-2xl text-muted-foreground">
+              <p className="mt-4 max-w-2xl text-muted-foreground" style={{ textAlign: "justify" }}>
                 Let's diagnose where your business is, and architect where it's going. No obligation.
               </p>
             </div>
