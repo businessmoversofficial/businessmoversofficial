@@ -20,11 +20,20 @@ export function SiteFooter() {
             We are architects of excellence — sincerely passionate and committed to alleviating poverty through business and economic development.
           </p>
           <div className="mt-6 flex gap-3">
-            <a href="https://instagram.com/businessmoversofficial" className="rounded-full border border-border p-2.5 text-muted-foreground transition-colors hover:border-primary hover:text-primary" aria-label="Instagram">
+            <a href="https://www.instagram.com/businessmoversofficial?igsh=YXc0aGRuNmtlemc4" target="_blank" rel="noopener noreferrer" className="rounded-full border border-border p-2.5 text-muted-foreground transition-colors hover:border-primary hover:text-primary" aria-label="Instagram">
               <Instagram className="h-4 w-4" />
             </a>
             <a href="https://www.linkedin.com/in/kehinde-adelakun-284790218" target="_blank" rel="noopener noreferrer" className="rounded-full border border-border p-2.5 text-muted-foreground transition-colors hover:border-primary hover:text-primary" aria-label="LinkedIn">
               <Linkedin className="h-4 w-4" />
+            </a>
+            <a href="https://youtube.com/@businessmovers_official?si=sdAqtIzRlvt_betQ" target="_blank" rel="noopener noreferrer" className="rounded-full border border-border p-2.5 text-muted-foreground transition-colors hover:border-primary hover:text-primary" aria-label="YouTube">
+              <Youtube className="h-4 w-4" />
+            </a>
+            <a href="https://x.com/business_movers" target="_blank" rel="noopener noreferrer" className="rounded-full border border-border p-2.5 text-muted-foreground transition-colors hover:border-primary hover:text-primary" aria-label="X">
+              <Twitter className="h-4 w-4" />
+            </a>
+            <a href="https://www.tiktok.com/@businessmoversofficial?_r=1&_t=ZS-96bVvAVD9OP" target="_blank" rel="noopener noreferrer" className="rounded-full border border-border p-2.5 text-muted-foreground transition-colors hover:border-primary hover:text-primary" aria-label="TikTok">
+              <Music2 className="h-4 w-4" />
             </a>
             <a href="mailto:businessmoversofficial@gmail.com" className="rounded-full border border-border p-2.5 text-muted-foreground transition-colors hover:border-primary hover:text-primary" aria-label="Email">
               <Mail className="h-4 w-4" />
