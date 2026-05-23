@@ -1,8 +1,10 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { useState } from "react";
 import {
   ArrowRight,
   BarChart3,
   Compass,
+  Copy,
   Megaphone,
   Globe2,
   Mail,
@@ -80,8 +82,17 @@ const testimonials = [
   },
 ];
 
+const videoUrl = "https://www.youtube.com/watch?v=4Wu72VV6kvk";
 
 function HomePage() {
+  const [copiedVideoLink, setCopiedVideoLink] = useState(false);
+
+  const copyVideoLink = async () => {
+    await navigator.clipboard.writeText(videoUrl);
+    setCopiedVideoLink(true);
+    window.setTimeout(() => setCopiedVideoLink(false), 2000);
+  };
+
   return (
     <div>
       {/* HERO */}
