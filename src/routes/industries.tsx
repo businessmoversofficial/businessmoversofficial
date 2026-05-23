@@ -4,7 +4,7 @@ import { Building2, Banknote, ShoppingBasket, Scale, Stethoscope, ShieldCheck, U
 export const Route = createFileRoute("/industries")({
   head: () => ({
     meta: [
-      { title: "Industries — Business Movers" },
+      { title: "Industries, Business Movers" },
       { name: "description", content: "Sector-aware business development across Real Estate, Fintech, FMCG, Law, Medical, Security, Insurance, Agriculture, Hospitality and Education." },
     ],
   }),
@@ -34,7 +34,7 @@ function IndustriesPage() {
             Ten industries. <span className="text-gradient">One standard.</span>
           </h1>
           <p className="mt-6 max-w-2xl text-lg text-muted-foreground">
-            We bring sector-aware insight to every engagement — pairing universal strategy with the language and rhythm of your industry.
+            We bring sector aware insight to every engagement, pairing universal strategy with the language and rhythm of your industry.
           </p>
         </div>
       </section>

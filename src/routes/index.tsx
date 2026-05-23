@@ -22,8 +22,8 @@ import ebookCover from "@/assets/ebook-side-hustles-cover.jpg";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Business Movers — Positioning Businesses for Excellence" },
-      { name: "description", content: "Tailored strategies, market research, and digital growth services that position your business for long-term excellence." },
+      { title: "Business Movers, Positioning Businesses for Excellence" },
+      { name: "description", content: "Tailored strategies, market research, and digital growth services that position your business for long term excellence." },
     ],
   }),
   component: HomePage,
@@ -33,9 +33,9 @@ const services = [
   { icon: Search, title: "Market Research & Analysis", desc: "Understand your audience, refine pricing, and shape strategy with rigorous market intelligence." },
   { icon: Compass, title: "Strategic Planning", desc: "SWOT, PESTLE and growth roadmaps that turn limited resources into compounding momentum." },
   { icon: Target, title: "Marketing & Sales Strategy", desc: "Brand presence, customer relationships and demand engines built around your clime." },
-  { icon: Megaphone, title: "Advertising Strategy", desc: "Tailored campaigns with creatives, targeting and KPI tracking — engineered for scale." },
+  { icon: Megaphone, title: "Advertising Strategy", desc: "Tailored campaigns with creatives, targeting and KPI tracking, engineered for scale." },
   { icon: Globe2, title: "Digital Strategy", desc: "Content, SEO, social, email and web design from a team of specialist digital marketers." },
-  { icon: BarChart3, title: "Business Development", desc: "Pitch decks, expansion plans and proposals that set you up for long-term growth." },
+  { icon: BarChart3, title: "Business Development", desc: "Pitch decks, expansion plans and proposals that set you up for long term growth." },
 ];
 
 const industries = [
@@ -45,7 +45,7 @@ const industries = [
 
 const stats = [
   { v: "10+", l: "Industries Served" },
-  { v: "20%", l: "Of new businesses fail in 2 years — we change that" },
+  { v: "20%", l: "Of new businesses fail in 2 years, we change that" },
   { v: "100%", l: "Tailored Strategy" },
   { v: "24/7", l: "Client Support" },
 ];
@@ -111,11 +111,14 @@ function HomePage() {
             <h1 className="mt-6 font-display text-5xl font-bold leading-[1.05] md:text-7xl">
               Positioning <span className="text-gradient">Businesses</span> for Excellence
             </h1>
-            <p className="mt-6 max-w-xl text-lg leading-relaxed text-muted-foreground">
-              From in-depth market analysis to expertly crafted business proposals, pitch decks,
-              and expansion plans — we provide all-in-one business development support that sets
-              you up for long-term growth.
-            </p>
+            <div className="mt-6 max-w-xl space-y-4 text-lg leading-relaxed text-muted-foreground" style={{ textAlign: "justify" }}>
+              <p className="font-display text-2xl font-semibold text-foreground md:text-3xl">
+                We don't just consult. <br />We move businesses.
+              </p>
+              <p>
+                Most consultants hand you a report and disappear. Business Movers co builds your strategy, stays through execution, and measures success the only way that matters; by the growth you actually see.
+              </p>
+            </div>
             <div className="mt-10 flex flex-wrap gap-4">
               <Link
                 to="/contact"
@@ -137,14 +140,14 @@ function HomePage() {
             <div className="relative overflow-hidden rounded-3xl border border-primary/20 bg-gradient-card shadow-soft">
               <img
                 src={founder}
-                alt="Adelakun Kehinde — Founder, Business Movers"
+                alt="Adelakun Kehinde, Founder, Business Movers"
                 width={1024}
                 height={1280}
                 className="h-full w-full object-cover"
               />
               <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-background via-background/80 to-transparent p-6">
                 <div className="font-display text-lg font-bold text-primary">Adelakun Kehinde</div>
-                <div className="text-xs uppercase tracking-wider text-muted-foreground">B.Sc., M.Sc., MNITP, RTP — Founder</div>
+                <div className="text-xs uppercase tracking-wider text-muted-foreground">B.Sc., M.Sc., MNITP, RTP, Founder</div>
               </div>
             </div>
           </div>
@@ -160,6 +163,51 @@ function HomePage() {
               <div className="mt-2 text-xs uppercase tracking-wider text-muted-foreground">{s.l}</div>
             </div>
           ))}
+        </div>
+      </section>
+
+      {/* WELCOME VIDEO (lady) */}
+      <section className="mx-auto max-w-7xl px-6 py-20">
+        <div className="grid gap-10 md:grid-cols-[1.1fr_1fr] md:items-center">
+          <div className="relative">
+            <div className="absolute -inset-4 -z-10 rounded-3xl bg-gradient-cyan opacity-25 blur-2xl" />
+            <div className="overflow-hidden rounded-3xl border border-primary/30 bg-background shadow-soft">
+              <video
+                src="/welcome-business-movers.mp4"
+                autoPlay
+                muted
+                loop
+                playsInline
+                controls
+                className="h-full w-full object-cover"
+              />
+            </div>
+          </div>
+          <div>
+            <span className="text-xs font-semibold uppercase tracking-[0.25em] text-primary">A warm welcome</span>
+            <h2 className="mt-3 font-display text-4xl font-bold leading-tight md:text-5xl">
+              Meet the team <span className="text-gradient">moving businesses forward.</span>
+            </h2>
+            <p className="mt-5 text-lg leading-relaxed text-muted-foreground" style={{ textAlign: "justify" }}>
+              Hear directly from one of our representatives as she walks you through what Business Movers stands for, the services we deliver, and how we partner with you to position your business for excellence.
+            </p>
+            <div className="mt-8 flex flex-wrap gap-3">
+              <a
+                href="https://wa.me/2349127050547"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 rounded-full bg-[#25D366] px-6 py-3 text-sm font-semibold text-white shadow-lg transition-transform hover:scale-105"
+              >
+                Chat on WhatsApp
+              </a>
+              <Link
+                to="/contact"
+                className="inline-flex items-center gap-2 rounded-full border border-primary/30 px-6 py-3 text-sm font-semibold text-primary hover:bg-primary/10"
+              >
+                Talk to a strategist
+              </Link>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -208,6 +256,7 @@ function HomePage() {
         </div>
       </section>
 
+
       {/* SERVICES */}
       <section className="mx-auto max-w-7xl px-6 py-24">
         <div className="flex flex-col items-end justify-between gap-6 md:flex-row">
@@ -248,8 +297,8 @@ function HomePage() {
               <h2 className="mt-3 font-display text-4xl font-bold md:text-5xl">
                 Ten industries. <br />One standard: <span className="text-gradient">excellence.</span>
               </h2>
-              <p className="mt-5 max-w-md text-muted-foreground">
-                Whether you're scaling a fintech, building a real-estate brand, or modernising a law firm — we bring sector-aware strategy to every engagement.
+              <p className="mt-5 max-w-md text-muted-foreground" style={{ textAlign: "justify" }}>
+                Whether you're scaling a fintech, building a real estate brand, or modernising a law firm, we bring sector aware strategy to every engagement.
               </p>
               <Link to="/industries" className="mt-8 inline-flex items-center gap-2 text-sm font-semibold text-primary">
                 See all industries <ArrowRight className="h-4 w-4" />
@@ -304,7 +353,7 @@ function HomePage() {
               <div className="overflow-hidden rounded-2xl border border-primary/20 bg-background/40 shadow-soft">
                 <img
                   src={ebookCover}
-                  alt="Side Hustles For Nigerian House Wives — eBook mockup"
+                  alt="Side Hustles For Nigerian House Wives, eBook mockup"
                   className="h-full w-full object-cover"
                 />
               </div>
@@ -316,8 +365,8 @@ function HomePage() {
               <h3 className="mt-4 font-display text-3xl font-bold md:text-4xl">
                 Side Hustles For Nigerian House Wives
               </h3>
-              <p className="mt-4 text-muted-foreground leading-relaxed">
-                Our eBook gives you <strong className="text-foreground">64 practical side hustle ideas across 12 categories</strong> — designed specifically for busy Nigerian women looking to build income while managing home.
+              <p className="mt-4 text-muted-foreground leading-relaxed" style={{ textAlign: "justify" }}>
+                Our eBook gives you <strong className="text-foreground">64 practical side hustle ideas across 12 categories</strong>, designed specifically for busy Nigerian women looking to build income while managing home.
               </p>
 
               <div className="mt-6 flex items-baseline gap-3">
@@ -398,7 +447,7 @@ function HomePage() {
               <h2 className="font-display text-3xl font-bold leading-tight md:text-5xl">
                 Contact us today for a <span className="text-gradient">30-minute</span> free consultation.
               </h2>
-              <p className="mt-4 max-w-2xl text-muted-foreground">
+              <p className="mt-4 max-w-2xl text-muted-foreground" style={{ textAlign: "justify" }}>
                 Let's diagnose where your business is, and architect where it's going. No obligation.
               </p>
             </div>
