@@ -34,14 +34,20 @@ function IndustriesPage() {
   return (
     <div className="theme-white-teal">
       <section className="border-b border-border">
-        <div className="mx-auto max-w-7xl px-6 py-20 md:py-28">
-          <span className="text-xs font-semibold uppercase tracking-[0.25em] text-primary">Our Expertise Spans Across</span>
-          <h1 className="mt-4 max-w-4xl font-display text-5xl font-bold leading-tight md:text-7xl">
-            Ten industries. <span className="text-gradient">One standard.</span>
-          </h1>
-          <p className="mt-6 max-w-2xl text-lg text-muted-foreground">
-            We bring sector aware insight to every engagement, pairing universal strategy with the language and rhythm of your industry.
-          </p>
+        <div className="mx-auto grid max-w-7xl gap-12 px-6 py-20 md:grid-cols-[1.1fr_0.9fr] md:items-center md:py-28">
+          <div>
+            <span className="text-xs font-semibold uppercase tracking-[0.25em] text-primary">Our Expertise Spans Across</span>
+            <h1 className="mt-4 font-display text-5xl font-bold leading-tight md:text-7xl">
+              Ten industries. <span className="text-gradient">One standard.</span>
+            </h1>
+            <p className="mt-6 text-lg text-muted-foreground">
+              We bring sector aware insight to every engagement, pairing universal strategy with the language and rhythm of your industry.
+            </p>
+          </div>
+          <div className="grid grid-cols-2 gap-3">
+            <img src={realEstateImg} alt="Real estate project teams" loading="lazy" className="aspect-[4/5] w-full rounded-2xl object-cover shadow-soft" />
+            <img src={fintechImg} alt="Fintech and robotics" loading="lazy" className="mt-8 aspect-[4/5] w-full rounded-2xl object-cover shadow-soft" />
+          </div>
         </div>
       </section>
 
@@ -75,16 +81,22 @@ function IndustriesPage() {
       </section>
 
       <section className="mx-auto max-w-7xl px-6 py-20">
+        <div className="mb-8">
+          <span className="text-xs font-semibold uppercase tracking-[0.25em] text-primary">More sectors we serve</span>
+          <h2 className="mt-3 font-display text-3xl font-bold md:text-4xl">Beyond the spotlight.</h2>
+        </div>
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {industries.map((i) => (
-            <div key={i.title} className="group rounded-2xl border border-border bg-gradient-card p-8 transition-all hover:-translate-y-1 hover:border-primary/50 hover:shadow-glow">
-              <div className="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-primary/15 text-primary ring-1 ring-primary/30">
-                <i.icon className="h-5 w-5" />
+          {industries
+            .filter((i) => !["Real Estate", "Fintech", "FMCG", "Security", "Law Firms", "Agriculture"].includes(i.title))
+            .map((i) => (
+              <div key={i.title} className="group rounded-2xl border border-border bg-gradient-card p-8 transition-all hover:-translate-y-1 hover:border-primary/50 hover:shadow-glow">
+                <div className="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-primary/15 text-primary ring-1 ring-primary/30">
+                  <i.icon className="h-5 w-5" />
+                </div>
+                <h2 className="mt-5 font-display text-xl font-semibold">{i.title}</h2>
+                <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{i.desc}</p>
               </div>
-              <h2 className="mt-5 font-display text-xl font-semibold">{i.title}</h2>
-              <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{i.desc}</p>
-            </div>
-          ))}
+            ))}
         </div>
       </section>
     </div>
