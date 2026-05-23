@@ -64,7 +64,7 @@ const services = [
 
 function ServicesPage() {
   return (
-    <div>
+    <div className="theme-offwhite">
       <section className="border-b border-border">
         <div className="mx-auto max-w-7xl px-6 py-20 md:py-28">
           <span className="text-xs font-semibold uppercase tracking-[0.25em] text-primary">Our Services</span>
