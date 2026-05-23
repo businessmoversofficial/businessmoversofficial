@@ -1,6 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useState } from "react";
 import { ChevronDown, HelpCircle, MessageCircle, Mail, Phone } from "lucide-react";
+import faqPortrait from "@/assets/faq-portrait.png";
 
 export const Route = createFileRoute("/faq")({
   head: () => ({
@@ -96,16 +97,21 @@ function FAQPage() {
   return (
     <div className="theme-light-teal">
       <section className="border-b border-border">
-        <div className="mx-auto max-w-7xl px-6 py-20 md:py-28">
-          <span className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.25em] text-primary">
-            <HelpCircle className="h-3.5 w-3.5" /> Frequently Asked Questions
-          </span>
-          <h1 className="mt-4 max-w-4xl font-display text-5xl font-bold leading-tight md:text-7xl">
-            Everything you need to know, <span className="text-gradient">answered.</span>
-          </h1>
-          <p className="mt-6 max-w-3xl text-lg leading-relaxed text-muted-foreground" style={{ textAlign: "justify" }}>
-            Whether you are a startup founder, a growing SME owner, or a corporate leader seeking transformative growth, this page addresses the most common questions about Business Movers, who we are, what we do, how we work, and why we are the strategic partner your business needs.
-          </p>
+        <div className="mx-auto grid max-w-7xl gap-12 px-6 py-20 md:grid-cols-[1.1fr_0.9fr] md:items-center md:py-28">
+          <div>
+            <span className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.25em] text-primary">
+              <HelpCircle className="h-3.5 w-3.5" /> Frequently Asked Questions
+            </span>
+            <h1 className="mt-4 max-w-4xl font-display text-5xl font-bold leading-tight md:text-7xl">
+              Everything you need to know, <span className="text-gradient">answered.</span>
+            </h1>
+            <p className="mt-6 max-w-3xl text-lg leading-relaxed text-muted-foreground" style={{ textAlign: "justify" }}>
+              Whether you are a startup founder, a growing SME owner, or a corporate leader seeking transformative growth, this page addresses the most common questions about Business Movers, who we are, what we do, how we work, and why we are the strategic partner your business needs.
+            </p>
+          </div>
+          <div>
+            <img src={faqPortrait} alt="Professional advisor ready to answer your questions" loading="lazy" className="aspect-[4/5] w-full rounded-2xl object-cover shadow-soft" />
+          </div>
         </div>
       </section>
 

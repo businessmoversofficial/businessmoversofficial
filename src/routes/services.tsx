@@ -81,7 +81,7 @@ function ServicesPage() {
             <div className="absolute -inset-4 -z-10 rounded-3xl bg-primary/15 blur-2xl" />
             <img
               src={tradingFloor}
-              alt="Analysts reviewing live market data over a city skyline"
+              alt="Smiling shop owner serving a customer in a vibrant Nigerian provisions store"
               loading="lazy"
               className="aspect-[4/5] w-full rounded-3xl border border-primary/20 object-cover shadow-soft"
             />
