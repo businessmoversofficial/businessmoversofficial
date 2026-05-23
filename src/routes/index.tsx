@@ -15,7 +15,7 @@ import {
   Star,
 } from "lucide-react";
 import heroBg from "@/assets/hero-bg.jpg";
-import founder from "@/assets/founder-portrait.jpg";
+import founder from "@/assets/founder-home.jpg";
 import ebookCover from "@/assets/ebook-side-hustles-cover.jpg";
 
 
