@@ -2,6 +2,7 @@ import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { ArrowLeft, Calendar, Clock, Gift, MessageCircle } from "lucide-react";
 import { getPostBySlug } from "@/lib/blog.functions";
 import { NewsletterSignup } from "@/components/NewsletterSignup";
+import { ShareButtons } from "@/components/ShareButtons";
 
 export const Route = createFileRoute("/blog/$slug")({
   loader: async ({ params }) => {
