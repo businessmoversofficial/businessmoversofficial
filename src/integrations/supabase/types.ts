@@ -14,6 +14,63 @@ export type Database = {
   }
   public: {
     Tables: {
+      blog_posts: {
+        Row: {
+          author: string
+          category: string | null
+          content: string
+          cover_image: string | null
+          created_at: string
+          excerpt: string
+          id: string
+          lead_magnet_cta: string | null
+          lead_magnet_description: string | null
+          lead_magnet_title: string | null
+          published: boolean
+          published_at: string | null
+          read_time: string | null
+          slug: string
+          title: string
+          updated_at: string
+        }
+        Insert: {
+          author?: string
+          category?: string | null
+          content: string
+          cover_image?: string | null
+          created_at?: string
+          excerpt: string
+          id?: string
+          lead_magnet_cta?: string | null
+          lead_magnet_description?: string | null
+          lead_magnet_title?: string | null
+          published?: boolean
+          published_at?: string | null
+          read_time?: string | null
+          slug: string
+          title: string
+          updated_at?: string
+        }
+        Update: {
+          author?: string
+          category?: string | null
+          content?: string
+          cover_image?: string | null
+          created_at?: string
+          excerpt?: string
+          id?: string
+          lead_magnet_cta?: string | null
+          lead_magnet_description?: string | null
+          lead_magnet_title?: string | null
+          published?: boolean
+          published_at?: string | null
+          read_time?: string | null
+          slug?: string
+          title?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
       contact_submissions: {
         Row: {
           biggest_challenge: string | null

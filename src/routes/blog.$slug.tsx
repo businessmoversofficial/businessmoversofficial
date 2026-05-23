@@ -1,11 +1,11 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { ArrowLeft, Calendar, Clock, Gift, MessageCircle } from "lucide-react";
-import { getPostBySlug } from "@/lib/blog-posts";
+import { getPostBySlug } from "@/lib/blog.functions";
 import { NewsletterSignup } from "@/components/NewsletterSignup";
 
 export const Route = createFileRoute("/blog/$slug")({
-  loader: ({ params }) => {
-    const post = getPostBySlug(params.slug);
+  loader: async ({ params }) => {
+    const post = await getPostBySlug({ data: { slug: params.slug } });
     if (!post) throw notFound();
     return { post };
   },
@@ -13,12 +13,13 @@ export const Route = createFileRoute("/blog/$slug")({
     const post = loaderData?.post;
     return {
       meta: [
-        { title: post ? `${post.title} , Business Movers` : "Article , Business Movers" },
+        { title: post ? `${post.title}, Business Movers` : "Article, Business Movers" },
         { name: "description", content: post?.excerpt ?? "" },
         { property: "og:type", content: "article" },
         { property: "og:title", content: post?.title ?? "" },
         { property: "og:description", content: post?.excerpt ?? "" },
         { property: "og:url", content: `https://businessmoversofficial.lovable.app/blog/${params.slug}` },
+        ...(post?.cover_image ? [{ property: "og:image", content: post.cover_image } as const] : []),
       ],
       links: [{ rel: "canonical", href: `https://businessmoversofficial.lovable.app/blog/${params.slug}` }],
       scripts: post
@@ -30,7 +31,7 @@ export const Route = createFileRoute("/blog/$slug")({
                 "@type": "Article",
                 headline: post.title,
                 description: post.excerpt,
-                datePublished: post.publishedAt,
+                datePublished: post.published_at,
                 author: { "@type": "Organization", name: "Business Movers" },
                 publisher: { "@type": "Organization", name: "Business Movers" },
               }),
@@ -78,7 +79,21 @@ function renderParagraph(text: string, i: number) {
 }
 
 function BlogPostPage() {
-  const { post } = Route.useLoaderData();
+  const { post } = Route.useLoaderData() as {
+    post: {
+      slug: string;
+      title: string;
+      excerpt: string;
+      content: string;
+      cover_image: string | null;
+      category: string | null;
+      read_time: string | null;
+      lead_magnet_title: string | null;
+      lead_magnet_description: string | null;
+      published_at: string | null;
+    };
+  };
+  const paragraphs = post.content.split(/\n{2,}/).filter((p) => p.trim().length > 0);
 
   return (
     <article className="mx-auto max-w-3xl px-6 py-16 md:py-24">
@@ -87,29 +102,39 @@ function BlogPostPage() {
       </Link>
 
       <div className="mt-8">
-        <span className="rounded-full border border-primary/30 px-3 py-1 text-[10px] font-semibold uppercase tracking-wider text-primary">
-          {post.category}
-        </span>
+        {post.category && (
+          <span className="rounded-full border border-primary/30 px-3 py-1 text-[10px] font-semibold uppercase tracking-wider text-primary">
+            {post.category}
+          </span>
+        )}
         <h1 className="mt-5 font-display text-4xl font-bold leading-tight md:text-5xl">{post.title}</h1>
         <div className="mt-5 flex items-center gap-4 text-xs text-muted-foreground">
-          <span className="inline-flex items-center gap-1.5"><Calendar className="h-3.5 w-3.5" /> {new Date(post.publishedAt).toLocaleDateString("en-GB", { year: "numeric", month: "long", day: "numeric" })}</span>
-          <span className="inline-flex items-center gap-1.5"><Clock className="h-3.5 w-3.5" /> {post.readTime}</span>
+          {post.published_at && (
+            <span className="inline-flex items-center gap-1.5"><Calendar className="h-3.5 w-3.5" /> {new Date(post.published_at).toLocaleDateString("en-GB", { year: "numeric", month: "long", day: "numeric" })}</span>
+          )}
+          {post.read_time && (
+            <span className="inline-flex items-center gap-1.5"><Clock className="h-3.5 w-3.5" /> {post.read_time}</span>
+          )}
         </div>
       </div>
 
+      {post.cover_image && (
+        <img src={post.cover_image} alt={post.title} className="mt-8 w-full rounded-3xl border border-border" loading="lazy" />
+      )}
+
       <div className="mt-10 space-y-5">
-        {post.content.map(renderParagraph)}
+        {paragraphs.map(renderParagraph)}
       </div>
 
-      {post.leadMagnet && (
+      {post.lead_magnet_title && (
         <div className="mt-12 rounded-3xl border border-primary/30 bg-gradient-card p-8 shadow-glow">
           <div className="inline-flex items-center gap-2 rounded-full border border-primary/40 bg-primary/10 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-primary">
             <Gift className="h-3.5 w-3.5" /> Free Resource
           </div>
-          <h2 className="mt-4 font-display text-2xl font-bold">{post.leadMagnet}</h2>
-          <p className="mt-2 text-sm text-muted-foreground">
-            Drop your email to get the resource and join our newsletter for weekly playbooks.
-          </p>
+          <h2 className="mt-4 font-display text-2xl font-bold">{post.lead_magnet_title}</h2>
+          {post.lead_magnet_description && (
+            <p className="mt-2 text-sm text-muted-foreground">{post.lead_magnet_description}</p>
+          )}
           <div className="mt-5">
             <NewsletterSignup source={`lead-magnet:${post.slug}`} />
           </div>
@@ -118,7 +143,7 @@ function BlogPostPage() {
 
       <div className="mt-14 rounded-3xl border border-border bg-gradient-card p-8">
         <h3 className="font-display text-xl font-bold">Ready to move your business forward?</h3>
-        <p className="mt-2 text-sm text-muted-foreground">Book a free 30-minute Business Growth Consultation. No obligation.</p>
+        <p className="mt-2 text-sm text-muted-foreground">Book a free 30 minute Business Growth Consultation. No obligation.</p>
         <div className="mt-5 flex flex-wrap gap-3">
           <Link to="/contact" className="rounded-full bg-gradient-cyan px-6 py-3 text-sm font-semibold text-primary-foreground shadow-glow">
             Book consultation
