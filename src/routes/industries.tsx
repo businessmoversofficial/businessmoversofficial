@@ -3,6 +3,7 @@ import { Building2, Banknote, ShoppingBasket, Scale, Stethoscope, ShieldCheck, U
 import realEstateImg from "@/assets/industry-realestate-crew.png";
 import fintechImg from "@/assets/industry-fintech-robot.png";
 import fmcgImg from "@/assets/industry-fmcg-ops.png";
+import heroChess from "@/assets/industries-hero-chess.png";
 import securityImg from "@/assets/industry-security.png";
 import lawImg from "@/assets/industry-law.png";
 import agricultureImg from "@/assets/industry-agriculture.png";
@@ -44,9 +45,8 @@ function IndustriesPage() {
               We bring sector aware insight to every engagement, pairing universal strategy with the language and rhythm of your industry.
             </p>
           </div>
-          <div className="grid grid-cols-2 gap-3">
-            <img src={realEstateImg} alt="Real estate project teams" loading="lazy" className="aspect-[4/5] w-full rounded-2xl object-cover shadow-soft" />
-            <img src={fintechImg} alt="Fintech and robotics" loading="lazy" className="mt-8 aspect-[4/5] w-full rounded-2xl object-cover shadow-soft" />
+          <div>
+            <img src={heroChess} alt="Strategic chess board symbolising industry strategy" loading="lazy" className="aspect-[4/5] w-full rounded-2xl object-cover shadow-soft" />
           </div>
         </div>
       </section>
