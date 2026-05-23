@@ -166,6 +166,51 @@ function HomePage() {
         </div>
       </section>
 
+      {/* WELCOME VIDEO (lady) */}
+      <section className="mx-auto max-w-7xl px-6 py-20">
+        <div className="grid gap-10 md:grid-cols-[1.1fr_1fr] md:items-center">
+          <div className="relative">
+            <div className="absolute -inset-4 -z-10 rounded-3xl bg-gradient-cyan opacity-25 blur-2xl" />
+            <div className="overflow-hidden rounded-3xl border border-primary/30 bg-background shadow-soft">
+              <video
+                src="/welcome-business-movers.mp4"
+                autoPlay
+                muted
+                loop
+                playsInline
+                controls
+                className="h-full w-full object-cover"
+              />
+            </div>
+          </div>
+          <div>
+            <span className="text-xs font-semibold uppercase tracking-[0.25em] text-primary">A warm welcome</span>
+            <h2 className="mt-3 font-display text-4xl font-bold leading-tight md:text-5xl">
+              Meet the team <span className="text-gradient">moving businesses forward.</span>
+            </h2>
+            <p className="mt-5 text-lg leading-relaxed text-muted-foreground" style={{ textAlign: "justify" }}>
+              Hear directly from one of our representatives as she walks you through what Business Movers stands for, the services we deliver, and how we partner with you to position your business for excellence.
+            </p>
+            <div className="mt-8 flex flex-wrap gap-3">
+              <a
+                href="https://wa.me/2349127050547"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 rounded-full bg-[#25D366] px-6 py-3 text-sm font-semibold text-white shadow-lg transition-transform hover:scale-105"
+              >
+                Chat on WhatsApp
+              </a>
+              <Link
+                to="/contact"
+                className="inline-flex items-center gap-2 rounded-full border border-primary/30 px-6 py-3 text-sm font-semibold text-primary hover:bg-primary/10"
+              >
+                Talk to a strategist
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* VIDEO */}
       <section className="mx-auto max-w-7xl px-6 py-24">
         <div className="max-w-2xl">
@@ -210,6 +255,7 @@ function HomePage() {
           </div>
         </div>
       </section>
+
 
       {/* SERVICES */}
       <section className="mx-auto max-w-7xl px-6 py-24">
