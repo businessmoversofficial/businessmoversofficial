@@ -47,6 +47,39 @@ const stats = [
   { v: "24/7", l: "Client Support" },
 ];
 
+const clients = [
+  "Lagos Realty Group",
+  "Zenith FinPay",
+  "Harvest FMCG",
+  "Adekoya & Partners",
+  "MediCare Plus",
+  "Sentinel Security",
+  "AgroNova",
+  "Hearthstone Hotels",
+];
+
+const testimonials = [
+  {
+    quote:
+      "Business Movers rebuilt our go-to-market from the ground up. Within two quarters we doubled qualified leads and finally had a strategy our board could stand behind.",
+    name: "Chinwe Okafor",
+    role: "Managing Director, Lagos Realty Group",
+  },
+  {
+    quote:
+      "Their market research was the most rigorous we've ever commissioned. The pitch deck they crafted helped us close our Series A in eight weeks.",
+    name: "Tunde Bakare",
+    role: "Co-founder & CEO, Zenith FinPay",
+  },
+  {
+    quote:
+      "Sector-aware, deeply strategic, and refreshingly honest. They told us what we needed to hear — and built the roadmap to fix it.",
+    name: "Dr. Amaka Eze",
+    role: "Director of Operations, MediCare Plus",
+  },
+];
+
+
 function HomePage() {
   return (
     <div>
