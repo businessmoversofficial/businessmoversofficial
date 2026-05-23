@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { Award, Lightbulb, ShieldCheck, Users, Target, Zap, Sparkles, Linkedin, Briefcase, Megaphone, Scale, Wallet, BarChart3, Palette, TrendingUp } from "lucide-react";
 import founder from "@/assets/founder-portrait.jpg";
 import handshake from "@/assets/home-handshake.jpg";
+import businessmen from "@/assets/about-businessmen.jpg";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
