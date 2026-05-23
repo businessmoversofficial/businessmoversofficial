@@ -1,5 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Search, Compass, Target, Megaphone, Globe2, Mail, Share2, BarChart3, ArrowRight } from "lucide-react";
+import boardroom from "@/assets/services-boardroom.webp";
 
 export const Route = createFileRoute("/services")({
   head: () => ({
