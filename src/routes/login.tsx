@@ -7,7 +7,7 @@ import { Loader2, Lock } from "lucide-react";
 export const Route = createFileRoute("/login")({
   head: () => ({
     meta: [
-      { title: "Admin Login — Business Movers" },
+      { title: "Admin Login , Business Movers" },
       { name: "robots", content: "noindex, nofollow" },
     ],
   }),

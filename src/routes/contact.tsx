@@ -8,7 +8,7 @@ import { toast } from "sonner";
 export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
-      { title: "Contact — Business Movers" },
+      { title: "Contact , Business Movers" },
       { name: "description", content: "Book a free 30-minute consultation with Business Movers. Reach us by email, phone, or social." },
     ],
   }),
@@ -30,10 +30,10 @@ const contactSchema = z.object({
   message: z.string().trim().min(1, "Please add a short message").max(2000),
 });
 
-const yearsOptions = ["Less than 1 year", "1–3 years", "3–5 years", "5+ years"];
+const yearsOptions = ["Less than 1 year", "1 to 3 years", "3 to 5 years", "5+ years"];
 const stageOptions = ["Idea stage", "Just launched", "Growing but stuck", "Scaling"];
 const challengeOptions = ["Entering a new market", "Growing revenue", "Fixing business structure", "All of the above"];
-const revenueOptions = ["Pre-revenue", "Under ₦500k", "₦500k–₦2M", "₦2M–₦10M", "Above ₦10M"];
+const revenueOptions = ["Pre revenue", "Under ₦500k", "₦500k to ₦2M", "₦2M to ₦10M", "Above ₦10M"];
 const contactOptions = ["Phone number", "Email", "WhatsApp"];
 
 function ContactPage() {
@@ -174,7 +174,7 @@ function ContactPage() {
               </div>
               <div>
                 <div className="text-xs uppercase tracking-wider text-muted-foreground">Registered</div>
-                <div className="mt-1 font-medium">RC: 7285941 — Nigeria</div>
+                <div className="mt-1 font-medium">RC: 7285941 , Nigeria</div>
               </div>
             </div>
           </div>
@@ -234,7 +234,7 @@ function ContactPage() {
                     required
                     maxLength={2000}
                     className="mt-2 w-full resize-none rounded-xl border border-input bg-background/60 px-4 py-3 text-sm outline-none transition-colors focus:border-primary"
-                    placeholder="Brief context, urgency, timelines, budget — whatever helps us prepare."
+                    placeholder="Brief context, urgency, timelines, budget , whatever helps us prepare."
                   />
                 </div>
 

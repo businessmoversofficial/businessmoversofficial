@@ -9,7 +9,7 @@ import { deleteSubmission as deleteSubmissionFn, getAdminDashboard, updateSubmis
 export const Route = createFileRoute("/admin")({
   head: () => ({
     meta: [
-      { title: "Admin — Business Movers" },
+      { title: "Admin , Business Movers" },
       { name: "robots", content: "noindex, nofollow" },
     ],
   }),
@@ -225,11 +225,11 @@ function AdminPage() {
               <dl className="mt-6 grid grid-cols-2 gap-4 text-sm">
                 <div>
                   <dt className="text-[10px] uppercase tracking-wider text-muted-foreground">Company</dt>
-                  <dd className="mt-1">{selected.company || "—"}</dd>
+                  <dd className="mt-1">{selected.company || ","}</dd>
                 </div>
                 <div>
                   <dt className="text-[10px] uppercase tracking-wider text-muted-foreground">Industry</dt>
-                  <dd className="mt-1">{selected.industry || "—"}</dd>
+                  <dd className="mt-1">{selected.industry || ","}</dd>
                 </div>
                 <div>
                   <dt className="text-[10px] uppercase tracking-wider text-muted-foreground">Received</dt>
