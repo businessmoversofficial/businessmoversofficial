@@ -33,9 +33,9 @@ const services = [
   { icon: Search, title: "Market Research & Analysis", desc: "Understand your audience, refine pricing, and shape strategy with rigorous market intelligence." },
   { icon: Compass, title: "Strategic Planning", desc: "SWOT, PESTLE and growth roadmaps that turn limited resources into compounding momentum." },
   { icon: Target, title: "Marketing & Sales Strategy", desc: "Brand presence, customer relationships and demand engines built around your clime." },
-  { icon: Megaphone, title: "Advertising Strategy", desc: "Tailored campaigns with creatives, targeting and KPI tracking — engineered for scale." },
+  { icon: Megaphone, title: "Advertising Strategy", desc: "Tailored campaigns with creatives, targeting and KPI tracking, engineered for scale." },
   { icon: Globe2, title: "Digital Strategy", desc: "Content, SEO, social, email and web design from a team of specialist digital marketers." },
-  { icon: BarChart3, title: "Business Development", desc: "Pitch decks, expansion plans and proposals that set you up for long-term growth." },
+  { icon: BarChart3, title: "Business Development", desc: "Pitch decks, expansion plans and proposals that set you up for long term growth." },
 ];
 
 const industries = [
@@ -45,7 +45,7 @@ const industries = [
 
 const stats = [
   { v: "10+", l: "Industries Served" },
-  { v: "20%", l: "Of new businesses fail in 2 years — we change that" },
+  { v: "20%", l: "Of new businesses fail in 2 years, we change that" },
   { v: "100%", l: "Tailored Strategy" },
   { v: "24/7", l: "Client Support" },
 ];
