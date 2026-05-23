@@ -1,6 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, Calendar, Clock, Gift } from "lucide-react";
 import { getPublishedPosts } from "@/lib/blog.functions";
+import founderImg from "@/assets/blog-hero-founder.png";
 
 export const Route = createFileRoute("/blog")({
   head: () => ({
@@ -35,14 +36,19 @@ function BlogIndexPage() {
   return (
     <div className="theme-blog-white">
       <section className="border-b border-border">
-        <div className="mx-auto max-w-7xl px-6 py-20 md:py-28">
-          <span className="text-xs font-semibold uppercase tracking-[0.25em] text-primary">Insights & Lead Magnets</span>
-          <h1 className="mt-4 max-w-4xl font-display text-5xl font-bold leading-tight md:text-7xl">
-            Playbooks for <span className="text-gradient">ambitious founders.</span>
-          </h1>
-          <p className="mt-6 max-w-3xl text-lg text-muted-foreground">
-            Practical frameworks, templates, and lessons from the front lines of African business development, free for you to use.
-          </p>
+        <div className="mx-auto grid max-w-7xl gap-12 px-6 py-20 md:grid-cols-[1.1fr_0.9fr] md:items-center md:py-28">
+          <div>
+            <span className="text-xs font-semibold uppercase tracking-[0.25em] text-primary">Insights & Lead Magnets</span>
+            <h1 className="mt-4 font-display text-5xl font-bold leading-tight md:text-7xl">
+              Playbooks for <span className="text-gradient">ambitious founders.</span>
+            </h1>
+            <p className="mt-6 text-lg text-muted-foreground">
+              Practical frameworks, templates, and lessons from the front lines of African business development, free for you to use.
+            </p>
+          </div>
+          <div>
+            <img src={founderImg} alt="Composed founder in a refined interior" loading="lazy" className="aspect-[4/5] w-full rounded-2xl object-cover shadow-soft" />
+          </div>
         </div>
       </section>
 
