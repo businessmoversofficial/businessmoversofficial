@@ -16,6 +16,7 @@ import {
 } from "lucide-react";
 import heroBg from "@/assets/hero-bg.jpg";
 import founder from "@/assets/founder-portrait.jpg";
+import ebookCover from "@/assets/ebook-side-hustles-cover.jpg";
 
 
 export const Route = createFileRoute("/")({
@@ -302,10 +303,9 @@ function HomePage() {
               <div className="absolute -inset-4 -z-10 rounded-3xl bg-gradient-cyan opacity-20 blur-2xl" />
               <div className="overflow-hidden rounded-2xl border border-primary/20 bg-background/40 shadow-soft">
                 <img
-                  src="/ebook-side-hustles-cover.jpg"
+                  src={ebookCover}
                   alt="Side Hustles For Nigerian House Wives — eBook mockup"
                   className="h-full w-full object-cover"
-                  onError={(e) => { (e.currentTarget as HTMLImageElement).style.display = 'none'; }}
                 />
               </div>
             </div>
