@@ -160,16 +160,30 @@ function HomePage() {
           </h2>
         </div>
         <div className="mt-10 overflow-hidden rounded-3xl border border-primary/20 bg-gradient-card shadow-soft">
-          <div className="relative aspect-video w-full">
-            <iframe
-              src="https://www.youtube.com/embed/4Wu72VV6kvk"
-              title="Business Movers"
+          <a
+            href="https://youtu.be/4Wu72VV6kvk"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group relative block aspect-video w-full"
+            aria-label="Watch Business Movers on YouTube"
+          >
+            <img
+              src="https://img.youtube.com/vi/4Wu72VV6kvk/maxresdefault.jpg"
+              alt="Business Movers video thumbnail"
+              className="absolute inset-0 h-full w-full object-cover transition-transform group-hover:scale-105"
               loading="lazy"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              allowFullScreen
-              className="absolute inset-0 h-full w-full"
             />
-          </div>
+            <div className="absolute inset-0 bg-gradient-to-t from-background/70 via-background/20 to-transparent" />
+            <div className="absolute inset-0 flex items-center justify-center">
+              <div className="flex h-20 w-20 items-center justify-center rounded-full bg-primary text-primary-foreground shadow-glow transition-transform group-hover:scale-110">
+                <svg className="ml-1 h-8 w-8 fill-current" viewBox="0 0 24 24"><path d="M8 5v14l11-7z" /></svg>
+              </div>
+            </div>
+            <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between">
+              <span className="font-display text-sm font-semibold text-foreground">Watch on YouTube</span>
+              <span className="text-xs uppercase tracking-wider text-muted-foreground">Opens in new tab</span>
+            </div>
+          </a>
         </div>
       </section>
 
