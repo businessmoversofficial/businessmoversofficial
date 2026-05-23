@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Award, Lightbulb, ShieldCheck, Users, Target, Zap, Sparkles } from "lucide-react";
+import { Award, Lightbulb, ShieldCheck, Users, Target, Zap, Sparkles, Linkedin } from "lucide-react";
 import founder from "@/assets/founder-portrait.jpg";
 
 export const Route = createFileRoute("/about")({
@@ -22,6 +22,8 @@ const values = [
 ];
 
 function AboutPage() {
+  const linkedinUrl = "https://www.linkedin.com/in/kehinde-adelakun-284790218";
+
   return (
     <div>
       <section className="relative border-b border-border">
@@ -74,6 +76,18 @@ function AboutPage() {
             <p className="mt-4 leading-relaxed text-muted-foreground">
               These problems are fixable. Business Movers exists to fix them.
             </p>
+            <a
+              href={linkedinUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={(event) => {
+                event.preventDefault();
+                window.open(linkedinUrl, "_blank", "noopener,noreferrer");
+              }}
+              className="mt-6 inline-flex items-center gap-2 rounded-full border border-primary/30 px-5 py-2.5 text-sm font-semibold text-primary transition-colors hover:bg-primary/10"
+            >
+              Connect with Kehinde on LinkedIn <Linkedin className="h-4 w-4" />
+            </a>
           </div>
         </div>
       </section>
