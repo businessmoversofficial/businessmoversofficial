@@ -3,7 +3,6 @@ import { Building2, Banknote, ShoppingBasket, Scale, Stethoscope, ShieldCheck, U
 import realEstateImg from "@/assets/industry-realestate-crew.png";
 import fintechImg from "@/assets/industry-fintech-robot.png";
 import fmcgImg from "@/assets/industry-fmcg-ops.png";
-import heroChess from "@/assets/industries-hero-chess.png";
 const heroVideo = "/videos/industries-hero.mp4";
 import securityImg from "@/assets/industry-security.png";
 import lawImg from "@/assets/industry-law.png";
@@ -36,8 +35,8 @@ function IndustriesPage() {
   return (
     <div className="theme-white-teal">
       <section className="border-b border-border">
-        <div className="mx-auto grid max-w-7xl gap-12 px-6 py-20 md:grid-cols-[1.1fr_0.9fr] md:items-center md:py-28">
-          <div>
+        <div className="mx-auto max-w-7xl px-6 py-20 md:py-28">
+          <div className="max-w-4xl">
             <span className="text-xs font-semibold uppercase tracking-[0.25em] text-primary">Our Expertise Spans Across</span>
             <h1 className="mt-4 font-display text-5xl font-bold leading-tight md:text-7xl">
               Ten industries. <span className="text-gradient">One standard.</span>
@@ -46,15 +45,14 @@ function IndustriesPage() {
               We bring sector aware insight to every engagement, pairing universal strategy with the language and rhythm of your industry.
             </p>
           </div>
-          <div className="relative overflow-hidden rounded-2xl shadow-soft">
+          <div className="relative mt-12 overflow-hidden rounded-2xl shadow-soft">
             <video
               src={heroVideo}
-              poster={heroChess}
               autoPlay
               muted
               loop
               playsInline
-              className="aspect-[4/5] w-full object-cover"
+              className="aspect-video w-full object-cover"
             />
             <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-background/40 via-transparent to-transparent" />
           </div>
