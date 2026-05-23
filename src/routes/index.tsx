@@ -111,11 +111,14 @@ function HomePage() {
             <h1 className="mt-6 font-display text-5xl font-bold leading-[1.05] md:text-7xl">
               Positioning <span className="text-gradient">Businesses</span> for Excellence
             </h1>
-            <p className="mt-6 max-w-xl text-lg leading-relaxed text-muted-foreground">
-              From in-depth market analysis to expertly crafted business proposals, pitch decks,
-              and expansion plans — we provide all-in-one business development support that sets
-              you up for long-term growth.
-            </p>
+            <div className="mt-6 max-w-xl space-y-4 text-lg leading-relaxed text-muted-foreground" style={{ textAlign: "justify" }}>
+              <p className="font-display text-2xl font-semibold text-foreground md:text-3xl">
+                We don't just consult. <br />We move businesses.
+              </p>
+              <p>
+                Most consultants hand you a report and disappear. Business Movers co builds your strategy, stays through execution, and measures success the only way that matters; by the growth you actually see.
+              </p>
+            </div>
             <div className="mt-10 flex flex-wrap gap-4">
               <Link
                 to="/contact"
