@@ -3,9 +3,9 @@ import { createFileRoute } from "@tanstack/react-router";
 export const Route = createFileRoute("/privacy")({
   head: () => ({
     meta: [
-      { title: "Privacy Policy — Business Movers" },
+      { title: "Privacy Policy , Business Movers" },
       { name: "description", content: "How Business Movers collects, uses, and protects your personal data." },
-      { property: "og:title", content: "Privacy Policy — Business Movers" },
+      { property: "og:title", content: "Privacy Policy , Business Movers" },
       { property: "og:description", content: "How Business Movers collects, uses, and protects your personal data." },
     ],
     links: [{ rel: "canonical", href: "https://businessmoversofficial.lovable.app/privacy" }],

@@ -3,9 +3,9 @@ import { createFileRoute } from "@tanstack/react-router";
 export const Route = createFileRoute("/terms")({
   head: () => ({
     meta: [
-      { title: "Terms of Service — Business Movers" },
+      { title: "Terms of Service , Business Movers" },
       { name: "description", content: "The terms and conditions that govern your use of the Business Movers website and services." },
-      { property: "og:title", content: "Terms of Service — Business Movers" },
+      { property: "og:title", content: "Terms of Service , Business Movers" },
       { property: "og:description", content: "The terms and conditions that govern your use of the Business Movers website and services." },
     ],
     links: [{ rel: "canonical", href: "https://businessmoversofficial.lovable.app/terms" }],
@@ -38,7 +38,7 @@ function TermsPage() {
 
         <section>
           <h2 className="font-display text-xl font-bold text-foreground">4. Intellectual property</h2>
-          <p className="mt-2">All content on this site — text, graphics, logos, frameworks, and methodologies — is the property of Business Movers or its licensors, and may not be reproduced or redistributed without written permission.</p>
+          <p className="mt-2">All content on this site , text, graphics, logos, frameworks, and methodologies , is the property of Business Movers or its licensors, and may not be reproduced or redistributed without written permission.</p>
         </section>
 
         <section>

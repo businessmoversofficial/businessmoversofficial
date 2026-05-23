@@ -18,7 +18,7 @@ export function SiteFooter() {
             </div>
           </div>
           <p className="mt-5 max-w-md text-sm leading-relaxed text-muted-foreground">
-            We are architects of excellence — sincerely passionate and committed to alleviating poverty through business and economic development.
+            We are architects of excellence , sincerely passionate and committed to alleviating poverty through business and economic development.
           </p>
           <div className="mt-6 flex flex-wrap gap-3">
             <a href="https://www.instagram.com/businessmoversofficial?igsh=YXc0aGRuNmtlemc4" target="_blank" rel="noopener noreferrer" className="rounded-full border border-border p-2.5 text-muted-foreground transition-colors hover:border-primary hover:text-primary" aria-label="Instagram">

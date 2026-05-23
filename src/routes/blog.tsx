@@ -5,9 +5,9 @@ import { blogPosts } from "@/lib/blog-posts";
 export const Route = createFileRoute("/blog")({
   head: () => ({
     meta: [
-      { title: "Blog & Lead Magnets — Business Movers" },
-      { name: "description", content: "Practical playbooks, templates, and frameworks from Business Movers — covering strategy, marketing, fundraising, and growth for African businesses." },
-      { property: "og:title", content: "Blog & Lead Magnets — Business Movers" },
+      { title: "Blog & Lead Magnets , Business Movers" },
+      { name: "description", content: "Practical playbooks, templates, and frameworks from Business Movers , covering strategy, marketing, fundraising, and growth for African businesses." },
+      { property: "og:title", content: "Blog & Lead Magnets , Business Movers" },
       { property: "og:description", content: "Free playbooks, templates and frameworks for ambitious African founders." },
     ],
     links: [{ rel: "canonical", href: "https://businessmoversofficial.lovable.app/blog" }],
@@ -25,7 +25,7 @@ function BlogIndexPage() {
             Playbooks for <span className="text-gradient">ambitious founders.</span>
           </h1>
           <p className="mt-6 max-w-3xl text-lg text-muted-foreground">
-            Practical frameworks, templates, and lessons from the front lines of African business development — free for you to use.
+            Practical frameworks, templates, and lessons from the front lines of African business development , free for you to use.
           </p>
         </div>
       </section>
