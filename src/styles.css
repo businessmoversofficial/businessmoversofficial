@@ -105,6 +105,13 @@
     font-family: var(--font-display);
     letter-spacing: -0.02em;
   }
+
+  /* Sitewide justified body copy for long-form paragraphs */
+  p.leading-relaxed {
+    text-align: justify;
+    text-justify: inter-word;
+    hyphens: auto;
+  }
 }
 
 @layer utilities {
