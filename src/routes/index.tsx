@@ -166,13 +166,17 @@ function HomePage() {
                 Click below to open the Business Movers video directly on YouTube in a new tab.
               </p>
               <p className="mt-3 break-all text-sm font-semibold text-primary">
-                https://youtu.be/4Wu72VV6kvk
+                https://www.youtube.com/watch?v=4Wu72VV6kvk
               </p>
             </div>
             <a
-              href="https://youtu.be/4Wu72VV6kvk"
+              href="https://www.youtube.com/watch?v=4Wu72VV6kvk"
               target="_blank"
               rel="noopener noreferrer external"
+              onClick={(event) => {
+                event.preventDefault();
+                window.open("https://www.youtube.com/watch?v=4Wu72VV6kvk", "_blank", "noopener,noreferrer");
+              }}
               className="inline-flex shrink-0 items-center justify-center gap-2 rounded-full bg-gradient-cyan px-7 py-3.5 text-sm font-semibold text-primary-foreground shadow-glow transition-transform hover:scale-105"
               aria-label="Open Business Movers video on YouTube"
             >
