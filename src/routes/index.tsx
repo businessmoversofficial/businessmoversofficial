@@ -338,13 +338,19 @@ function HomePage() {
               Brands across ten industries
             </h2>
           </div>
-          <div className="mt-10 grid grid-cols-2 gap-px overflow-hidden rounded-2xl border border-border bg-border/60 sm:grid-cols-3 md:grid-cols-4">
+          <div className="mt-10 grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-3">
             {clients.map((c) => (
               <div
-                key={c}
-                className="flex h-24 items-center justify-center bg-background px-4 text-center font-display text-sm font-semibold uppercase tracking-[0.18em] text-muted-foreground transition-colors hover:text-primary"
+                key={c.name}
+                className="group flex items-center gap-4 rounded-2xl border border-border bg-gradient-card p-4 transition-all hover:-translate-y-0.5 hover:border-primary/50 hover:shadow-glow"
               >
-                {c}
+                <div className="flex h-14 w-14 flex-shrink-0 items-center justify-center rounded-xl bg-gradient-cyan font-display text-base font-bold text-primary-foreground shadow-glow ring-1 ring-primary/40">
+                  {initialsFor(c.name)}
+                </div>
+                <div className="min-w-0">
+                  <div className="truncate font-display text-sm font-semibold text-foreground">{c.name}</div>
+                  <div className="text-[10px] uppercase tracking-[0.18em] text-muted-foreground">{c.industry}</div>
+                </div>
               </div>
             ))}
           </div>
