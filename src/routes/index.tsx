@@ -56,26 +56,27 @@ const clients = [
   "GE Homes & Properties Limited",
   "Absolute Grace Investment Limited",
   "Dukioluwa Industries Limited",
+  "DHS Investment Limited",
 ];
 
 const testimonials = [
   {
     quote:
-      "Business Movers rebuilt our go-to-market from the ground up. Within two quarters we doubled qualified leads and finally had a strategy our board could stand behind.",
-    name: "Chinwe Okafor",
-    role: "Managing Director, Lagos Realty Group",
+      "Business Movers rebuilt our go-to-market from the ground up. Within two quarters we doubled qualified leads and finally had a property strategy our board could stand behind.",
+    name: "GE Homes & Properties Limited",
+    role: "Executive Team",
   },
   {
     quote:
-      "Their market research was the most rigorous we've ever commissioned. The pitch deck they crafted helped us close our Series A in eight weeks.",
-    name: "Tunde Bakare",
-    role: "Co-founder & CEO, Zenith FinPay",
+      "Their market research was the most rigorous we've ever commissioned. The expansion plan they crafted positioned us to scale across new regions with real confidence.",
+    name: "Baker Industries Limited",
+    role: "Management",
   },
   {
     quote:
-      "Sector-aware, deeply strategic, and refreshingly honest. They told us what we needed to hear — and built the roadmap to fix it.",
-    name: "Dr. Amaka Eze",
-    role: "Director of Operations, MediCare Plus",
+      "Sector-aware, deeply strategic, and refreshingly honest. They told us what we needed to hear — and built the roadmap that grew our patient base quarter over quarter.",
+    name: "Novasmile Dental Studios",
+    role: "Clinic Leadership",
   },
 ];
 
