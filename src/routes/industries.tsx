@@ -1,8 +1,11 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Building2, Banknote, ShoppingBasket, Scale, Stethoscope, ShieldCheck, Umbrella, Wheat, Hotel, GraduationCap } from "lucide-react";
-import realEstateImg from "@/assets/industry-realestate.jpeg";
-import fintechImg from "@/assets/industry-fintech.jpg";
-import fmcgImg from "@/assets/industry-fmcg.jpg";
+import realEstateImg from "@/assets/industry-realestate-crew.png";
+import fintechImg from "@/assets/industry-fintech-robot.png";
+import fmcgImg from "@/assets/industry-fmcg-ops.png";
+import securityImg from "@/assets/industry-security.png";
+import lawImg from "@/assets/industry-law.png";
+import agricultureImg from "@/assets/industry-agriculture.png";
 
 export const Route = createFileRoute("/industries")({
   head: () => ({
@@ -49,11 +52,14 @@ function IndustriesPage() {
             <h2 className="mt-3 font-display text-3xl font-bold md:text-4xl">Where our work shows up.</h2>
           </div>
         </div>
-        <div className="grid gap-6 md:grid-cols-3">
+        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {[
-            { img: realEstateImg, label: "Real Estate", caption: "New landowners onboarded with brand-led acquisition systems." },
-            { img: fintechImg, label: "Fintech", caption: "Positioning and growth strategy for data-driven financial products." },
-            { img: fmcgImg, label: "FMCG", caption: "Distribution strategy and demand creation for fast-moving goods." },
+            { img: realEstateImg, label: "Real Estate", caption: "On-the-ground project teams powering developer growth and brand-led acquisition." },
+            { img: fintechImg, label: "Fintech", caption: "Positioning and growth strategy for data-driven, technology-first financial products." },
+            { img: fmcgImg, label: "FMCG", caption: "Operations, distribution and demand engines for fast-moving consumer brands." },
+            { img: securityImg, label: "Security", caption: "Trust-led marketing and growth planning for private security and protection firms." },
+            { img: lawImg, label: "Law Firms", caption: "Modern positioning and client acquisition systems for serious legal practices." },
+            { img: agricultureImg, label: "Agriculture", caption: "Value chain strategy and market access for agribusiness and agro enterprises." },
           ].map((f) => (
             <figure key={f.label} className="group overflow-hidden rounded-2xl border border-border bg-card shadow-soft transition-all hover:-translate-y-1 hover:border-primary/50 hover:shadow-glow">
               <div className="aspect-[4/3] overflow-hidden">
