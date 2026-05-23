@@ -1,8 +1,10 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { useState } from "react";
 import {
   ArrowRight,
   BarChart3,
   Compass,
+  Copy,
   Megaphone,
   Globe2,
   Mail,
@@ -80,8 +82,17 @@ const testimonials = [
   },
 ];
 
+const videoUrl = "https://www.youtube.com/watch?v=4Wu72VV6kvk";
 
 function HomePage() {
+  const [copiedVideoLink, setCopiedVideoLink] = useState(false);
+
+  const copyVideoLink = async () => {
+    await navigator.clipboard.writeText(videoUrl);
+    setCopiedVideoLink(true);
+    window.setTimeout(() => setCopiedVideoLink(false), 2000);
+  };
+
   return (
     <div>
       {/* HERO */}
@@ -163,25 +174,20 @@ function HomePage() {
           <div className="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
             <div>
               <p className="text-sm leading-relaxed text-muted-foreground">
-                Click below to open the Business Movers video directly on YouTube in a new tab.
+                Copy the link below and paste it in your browser to watch the Business Movers video.
               </p>
               <p className="mt-3 break-all text-sm font-semibold text-primary">
-                https://www.youtube.com/watch?v=4Wu72VV6kvk
+                {videoUrl}
               </p>
             </div>
-            <a
-              href="https://www.youtube.com/watch?v=4Wu72VV6kvk"
-              target="_blank"
-              rel="noopener noreferrer external"
-              onClick={(event) => {
-                event.preventDefault();
-                window.open("https://www.youtube.com/watch?v=4Wu72VV6kvk", "_blank", "noopener,noreferrer");
-              }}
+            <button
+              type="button"
+              onClick={copyVideoLink}
               className="inline-flex shrink-0 items-center justify-center gap-2 rounded-full bg-gradient-cyan px-7 py-3.5 text-sm font-semibold text-primary-foreground shadow-glow transition-transform hover:scale-105"
-              aria-label="Open Business Movers video on YouTube"
+              aria-label="Copy Business Movers YouTube video link"
             >
-              Watch on YouTube <ArrowRight className="h-4 w-4" />
-            </a>
+              {copiedVideoLink ? "Link copied" : "Copy YouTube link"} <Copy className="h-4 w-4" />
+            </button>
           </div>
         </div>
       </section>
