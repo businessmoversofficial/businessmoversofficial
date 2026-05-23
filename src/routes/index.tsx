@@ -9,9 +9,12 @@ import {
   Search,
   Target,
   CheckCircle2,
+  Quote,
+  Star,
 } from "lucide-react";
 import heroBg from "@/assets/hero-bg.jpg";
 import founder from "@/assets/founder-portrait.jpg";
+
 
 export const Route = createFileRoute("/")({
   head: () => ({
