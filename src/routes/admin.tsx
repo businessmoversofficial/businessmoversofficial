@@ -42,19 +42,28 @@ function AdminPage() {
     let mounted = true;
 
     const init = async () => {
-      const { data: userData, error: userError } = await supabase.auth.getUser();
-      if (userError || !userData.user) {
+      try {
+        const { data: userData, error: userError } = await supabase.auth.getUser();
+        if (userError || !userData.user) {
+          navigate({ to: "/login" });
+          return;
+        }
+
+        const dashboard = await fetchDashboard();
+        const admin = dashboard.isAdmin;
+        if (!mounted) return;
+        setIsAdmin(admin);
+        setSubmissions(dashboard.submissions as Submission[]);
+        setLoading(false);
+        setChecking(false);
+      } catch {
+        if (!mounted) return;
+        toast.error("Could not verify admin access");
+        setLoading(false);
+        setChecking(false);
         navigate({ to: "/login" });
         return;
       }
-
-      const dashboard = await fetchDashboard();
-      const admin = dashboard.isAdmin;
-      if (!mounted) return;
-      setIsAdmin(admin);
-      setSubmissions(dashboard.submissions as Submission[]);
-      setLoading(false);
-      setChecking(false);
     };
 
     init();
@@ -71,13 +80,19 @@ function AdminPage() {
 
   async function loadSubmissions() {
     setLoading(true);
-    const { isAdmin: admin, submissions: data } = await fetchDashboard();
-    setLoading(false);
-    if (!admin) {
-      setIsAdmin(false);
+    try {
+      const { isAdmin: admin, submissions: data } = await fetchDashboard();
+      setLoading(false);
+      if (!admin) {
+        setIsAdmin(false);
+        return;
+      }
+      setSubmissions(data as Submission[]);
+    } catch {
+      setLoading(false);
+      toast.error("Failed to load submissions");
       return;
     }
-    setSubmissions(data as Submission[]);
   }
 
   async function handleSignOut() {
