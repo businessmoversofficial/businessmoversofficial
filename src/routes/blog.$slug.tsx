@@ -96,7 +96,8 @@ function BlogPostPage() {
   const paragraphs = post.content.split(/\n{2,}/).filter((p) => p.trim().length > 0);
 
   return (
-    <article className="mx-auto max-w-3xl px-6 py-16 md:py-24">
+    <div className="theme-blog-white">
+      <article className="mx-auto max-w-3xl px-6 py-16 md:py-24">
       <Link to="/blog" className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-primary">
         <ArrowLeft className="h-4 w-4" /> All articles
       </Link>
@@ -153,6 +154,7 @@ function BlogPostPage() {
           </a>
         </div>
       </div>
-    </article>
+      </article>
+    </div>
   );
 }
