@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Award, Lightbulb, ShieldCheck, Users, Target, Zap, Sparkles, Linkedin, Briefcase, Megaphone, Scale, Wallet, BarChart3, Palette, TrendingUp } from "lucide-react";
 import founder from "@/assets/founder-portrait.jpg";
-import handshake from "@/assets/home-handshake.jpg";
+import handshake from "@/assets/about-team-handshake.png";
 import businessmen from "@/assets/about-businessmen.jpg";
 
 export const Route = createFileRoute("/about")({
@@ -53,7 +53,7 @@ function AboutPage() {
             <div className="absolute -inset-4 -z-10 rounded-3xl bg-primary/15 blur-2xl" />
             <img
               src={handshake}
-              alt="Global business partnership, two professionals shaking hands"
+              alt="Business Movers team welcoming new partners with a handshake"
               loading="lazy"
               className="aspect-[4/5] w-full rounded-3xl border border-primary/20 object-cover shadow-soft"
             />
