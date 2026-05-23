@@ -51,16 +51,27 @@ const stats = [
 ];
 
 const clients = [
-  "Noble Guard Security",
-  "Baker Industries Limited",
-  "Oddspace Consult",
-  "Novasmile Dental Studios",
-  "HypeMan Africa",
-  "GE Homes & Properties Limited",
-  "Absolute Grace Investment Limited",
-  "Dukioluwa Industries Limited",
-  "DHS Investment Limited",
+  { name: "Noble Guard Security", industry: "Security" },
+  { name: "Baker Industries Limited", industry: "Manufacturing" },
+  { name: "Oddspace Consult", industry: "Consulting" },
+  { name: "Novasmile Dental Studios", industry: "Healthcare" },
+  { name: "HypeMan Africa", industry: "Media" },
+  { name: "GE Homes & Properties Limited", industry: "Real Estate" },
+  { name: "Absolute Grace Investment Limited", industry: "Investment" },
+  { name: "Dukioluwa Industries Limited", industry: "Industrial" },
+  { name: "DHS Investment Limited", industry: "Investment" },
 ];
+
+const initialsFor = (name: string) =>
+  name
+    .replace(/limited|ltd|industries|investment|studios|consult|africa|homes|&|properties/gi, "")
+    .trim()
+    .split(/\s+/)
+    .map((w) => w[0])
+    .filter(Boolean)
+    .slice(0, 2)
+    .join("")
+    .toUpperCase();
 
 const testimonials = [
   {
@@ -68,18 +79,21 @@ const testimonials = [
       "Business Movers rebuilt our go-to-market from the ground up. Within two quarters we doubled qualified leads and finally had a property strategy our board could stand behind.",
     name: "GE Homes & Properties Limited",
     role: "Executive Team",
+    metric: "2x qualified leads",
   },
   {
     quote:
       "Their market research was the most rigorous we've ever commissioned. The expansion plan they crafted positioned us to scale across new regions with real confidence.",
     name: "Baker Industries Limited",
     role: "Management",
+    metric: "Multi-region rollout",
   },
   {
     quote:
       "Business Movers opened doors we didn't know existed. Their market intelligence unlocked new revenue streams and helped us expand into territories we'd long considered out of reach.",
     name: "Dukioluwa Industries Limited",
     role: "Management",
+    metric: "New revenue streams",
   },
 ];
 
@@ -324,13 +338,19 @@ function HomePage() {
               Brands across ten industries
             </h2>
           </div>
-          <div className="mt-10 grid grid-cols-2 gap-px overflow-hidden rounded-2xl border border-border bg-border/60 sm:grid-cols-3 md:grid-cols-4">
+          <div className="mt-10 grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-3">
             {clients.map((c) => (
               <div
-                key={c}
-                className="flex h-24 items-center justify-center bg-background px-4 text-center font-display text-sm font-semibold uppercase tracking-[0.18em] text-muted-foreground transition-colors hover:text-primary"
+                key={c.name}
+                className="group flex items-center gap-4 rounded-2xl border border-border bg-gradient-card p-4 transition-all hover:-translate-y-0.5 hover:border-primary/50 hover:shadow-glow"
               >
-                {c}
+                <div className="flex h-14 w-14 flex-shrink-0 items-center justify-center rounded-xl bg-gradient-cyan font-display text-base font-bold text-primary-foreground shadow-glow ring-1 ring-primary/40">
+                  {initialsFor(c.name)}
+                </div>
+                <div className="min-w-0">
+                  <div className="truncate font-display text-sm font-semibold text-foreground">{c.name}</div>
+                  <div className="text-[10px] uppercase tracking-[0.18em] text-muted-foreground">{c.industry}</div>
+                </div>
               </div>
             ))}
           </div>
@@ -421,14 +441,22 @@ function HomePage() {
                 <blockquote className="mt-5 flex-1 text-sm leading-relaxed text-foreground/90">
                   "{t.quote}"
                 </blockquote>
-                <div className="mt-6 flex gap-1 text-primary">
+                <div className="mt-5 flex items-center gap-1 text-primary">
                   {Array.from({ length: 5 }).map((_, i) => (
                     <Star key={i} className="h-3.5 w-3.5 fill-current" />
                   ))}
                 </div>
-                <figcaption className="mt-4 border-t border-border pt-4">
-                  <div className="font-display text-sm font-semibold">{t.name}</div>
-                  <div className="text-xs text-muted-foreground">{t.role}</div>
+                <div className="mt-4 inline-flex w-fit items-center gap-1.5 rounded-full border border-primary/30 bg-primary/10 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.16em] text-primary">
+                  <CheckCircle2 className="h-3 w-3" /> {t.metric}
+                </div>
+                <figcaption className="mt-5 flex items-center gap-3 border-t border-border pt-5">
+                  <div className="flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-full bg-gradient-cyan font-display text-sm font-bold text-primary-foreground ring-1 ring-primary/40">
+                    {initialsFor(t.name)}
+                  </div>
+                  <div className="min-w-0">
+                    <div className="truncate font-display text-sm font-semibold">{t.name}</div>
+                    <div className="text-xs text-muted-foreground">{t.role}</div>
+                  </div>
                 </figcaption>
               </figure>
             ))}
