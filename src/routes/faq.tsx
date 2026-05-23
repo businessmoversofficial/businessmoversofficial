@@ -10,6 +10,22 @@ export const Route = createFileRoute("/faq")({
       { property: "og:title", content: "FAQ — Business Movers" },
       { property: "og:description", content: "Everything you need to know about working with Business Movers." },
     ],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          mainEntity: groups.flatMap((g) =>
+            g.items.map((item) => ({
+              "@type": "Question",
+              name: item.q,
+              acceptedAnswer: { "@type": "Answer", text: item.a },
+            })),
+          ),
+        }),
+      },
+    ],
   }),
   component: FAQPage,
 });
