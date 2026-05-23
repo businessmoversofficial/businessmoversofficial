@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import { z } from "zod";
-import { Mail, Phone, Instagram, Linkedin, MapPin, Send, CheckCircle2, Loader2 } from "lucide-react";
+import { Mail, Phone, Instagram, Linkedin, MapPin, Send, CheckCircle2, Loader2, Youtube, Twitter, Music2 } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
 
