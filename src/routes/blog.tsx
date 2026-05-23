@@ -1,0 +1,65 @@
+import { createFileRoute, Link } from "@tanstack/react-router";
+import { ArrowRight, Calendar, Clock, Gift } from "lucide-react";
+import { blogPosts } from "@/lib/blog-posts";
+
+export const Route = createFileRoute("/blog")({
+  head: () => ({
+    meta: [
+      { title: "Blog & Lead Magnets — Business Movers" },
+      { name: "description", content: "Practical playbooks, templates, and frameworks from Business Movers — covering strategy, marketing, fundraising, and growth for African businesses." },
+      { property: "og:title", content: "Blog & Lead Magnets — Business Movers" },
+      { property: "og:description", content: "Free playbooks, templates and frameworks for ambitious African founders." },
+    ],
+    links: [{ rel: "canonical", href: "https://businessmoversofficial.lovable.app/blog" }],
+  }),
+  component: BlogIndexPage,
+});
+
+function BlogIndexPage() {
+  return (
+    <div>
+      <section className="border-b border-border">
+        <div className="mx-auto max-w-7xl px-6 py-20 md:py-28">
+          <span className="text-xs font-semibold uppercase tracking-[0.25em] text-primary">Insights & Lead Magnets</span>
+          <h1 className="mt-4 max-w-4xl font-display text-5xl font-bold leading-tight md:text-7xl">
+            Playbooks for <span className="text-gradient">ambitious founders.</span>
+          </h1>
+          <p className="mt-6 max-w-3xl text-lg text-muted-foreground">
+            Practical frameworks, templates, and lessons from the front lines of African business development — free for you to use.
+          </p>
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-7xl px-6 py-20">
+        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+          {blogPosts.map((p) => (
+            <Link
+              key={p.slug}
+              to="/blog/$slug"
+              params={{ slug: p.slug }}
+              className="group flex flex-col rounded-3xl border border-border bg-gradient-card p-7 transition-all hover:-translate-y-1 hover:border-primary/50"
+            >
+              <span className="self-start rounded-full border border-primary/30 px-3 py-1 text-[10px] font-semibold uppercase tracking-wider text-primary">
+                {p.category}
+              </span>
+              <h2 className="mt-4 font-display text-xl font-bold leading-tight md:text-2xl">{p.title}</h2>
+              <p className="mt-3 flex-1 text-sm leading-relaxed text-muted-foreground">{p.excerpt}</p>
+              {p.leadMagnet && (
+                <div className="mt-4 inline-flex items-center gap-2 rounded-xl border border-primary/30 bg-primary/10 px-3 py-2 text-xs font-medium text-primary">
+                  <Gift className="h-3.5 w-3.5" /> {p.leadMagnet}
+                </div>
+              )}
+              <div className="mt-5 flex items-center justify-between text-xs text-muted-foreground">
+                <span className="inline-flex items-center gap-3">
+                  <span className="inline-flex items-center gap-1"><Calendar className="h-3 w-3" /> {new Date(p.publishedAt).toLocaleDateString("en-GB", { year: "numeric", month: "short", day: "numeric" })}</span>
+                  <span className="inline-flex items-center gap-1"><Clock className="h-3 w-3" /> {p.readTime}</span>
+                </span>
+                <ArrowRight className="h-4 w-4 text-primary transition-transform group-hover:translate-x-1" />
+              </div>
+            </Link>
+          ))}
+        </div>
+      </section>
+    </div>
+  );
+}
