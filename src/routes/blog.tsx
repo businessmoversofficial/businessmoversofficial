@@ -33,7 +33,7 @@ function BlogIndexPage() {
     published_at: string | null;
   }>;
   return (
-    <div>
+    <div className="theme-blog-white">
       <section className="border-b border-border">
         <div className="mx-auto max-w-7xl px-6 py-20 md:py-28">
           <span className="text-xs font-semibold uppercase tracking-[0.25em] text-primary">Insights & Lead Magnets</span>
@@ -56,7 +56,7 @@ function BlogIndexPage() {
                 key={p.slug}
                 to="/blog/$slug"
                 params={{ slug: p.slug }}
-                className="group flex flex-col rounded-3xl border border-border bg-gradient-card p-7 transition-all hover:-translate-y-1 hover:border-primary/50"
+                className="blog-card group flex flex-col rounded-3xl border border-border bg-card p-7 shadow-soft transition-all hover:-translate-y-1 hover:border-primary/50 hover:shadow-glow"
               >
                 {p.category && (
                   <span className="self-start rounded-full border border-primary/30 px-3 py-1 text-[10px] font-semibold uppercase tracking-wider text-primary">

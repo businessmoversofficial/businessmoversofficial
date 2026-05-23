@@ -127,3 +127,190 @@
     border: 1px solid oklch(0.5 0.08 200 / 0.2);
   }
 }
+
+/* ============================================================
+   PER-PAGE LIGHT THEMES
+   Each wrapper overrides the dark tokens with a light palette
+   so all existing utility classes (border-border, bg-gradient-card,
+   text-muted-foreground, text-primary, text-gradient, shadow-glow)
+   automatically restyle inside the wrapper. Header/footer are
+   outside the wrapper and keep the global dark theme.
+   ============================================================ */
+
+/* Shared light-theme reset for inputs and form fields */
+.theme-light input,
+.theme-light textarea,
+.theme-light select {
+  color: var(--foreground);
+}
+
+/* --- ABOUT: clean white ----------------------------------- */
+.theme-clean-white {
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.22 0.035 210);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.22 0.035 210);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.22 0.035 210);
+  --primary: oklch(0.5 0.12 195);
+  --primary-foreground: oklch(1 0 0);
+  --secondary: oklch(0.96 0.01 210);
+  --secondary-foreground: oklch(0.22 0.035 210);
+  --muted: oklch(0.96 0.005 210);
+  --muted-foreground: oklch(0.48 0.025 210);
+  --accent: oklch(0.55 0.13 195);
+  --accent-foreground: oklch(1 0 0);
+  --border: oklch(0.92 0.008 210);
+  --input: oklch(0.94 0.008 210);
+  --ring: oklch(0.55 0.13 195);
+  --surface: oklch(0.98 0.005 210);
+  --surface-foreground: oklch(0.22 0.035 210);
+  --gradient-card: linear-gradient(160deg, oklch(1 0 0), oklch(0.985 0.005 210));
+  --gradient-cyan: linear-gradient(135deg, oklch(0.55 0.13 195), oklch(0.45 0.14 200));
+  --shadow-glow: 0 20px 60px -25px oklch(0.55 0.13 195 / 0.35);
+  --shadow-soft: 0 10px 30px -15px oklch(0.5 0.05 210 / 0.18);
+  background-color: var(--background);
+  color: var(--foreground);
+}
+.theme-clean-white .text-gradient {
+  background: linear-gradient(135deg, oklch(0.48 0.13 195), oklch(0.32 0.1 205));
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+}
+
+/* --- SERVICES: off-white ---------------------------------- */
+.theme-offwhite {
+  --background: oklch(0.975 0.008 85);
+  --foreground: oklch(0.22 0.035 210);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.22 0.035 210);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.22 0.035 210);
+  --primary: oklch(0.5 0.12 195);
+  --primary-foreground: oklch(1 0 0);
+  --secondary: oklch(0.94 0.012 85);
+  --secondary-foreground: oklch(0.22 0.035 210);
+  --muted: oklch(0.94 0.01 85);
+  --muted-foreground: oklch(0.48 0.025 210);
+  --accent: oklch(0.55 0.13 195);
+  --accent-foreground: oklch(1 0 0);
+  --border: oklch(0.9 0.012 85);
+  --input: oklch(0.93 0.012 85);
+  --ring: oklch(0.55 0.13 195);
+  --surface: oklch(0.96 0.012 85);
+  --surface-foreground: oklch(0.22 0.035 210);
+  --gradient-card: linear-gradient(160deg, oklch(1 0 0), oklch(0.97 0.012 85));
+  --gradient-cyan: linear-gradient(135deg, oklch(0.5 0.13 195), oklch(0.42 0.14 200));
+  --shadow-glow: 0 20px 60px -25px oklch(0.5 0.13 195 / 0.3);
+  --shadow-soft: 0 10px 30px -15px oklch(0.4 0.04 210 / 0.18);
+  background-color: var(--background);
+  color: var(--foreground);
+}
+.theme-offwhite .text-gradient {
+  background: linear-gradient(135deg, oklch(0.48 0.13 195), oklch(0.32 0.1 205));
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+}
+
+/* --- INDUSTRIES: white with teal card accents ------------- */
+.theme-white-teal {
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.22 0.035 210);
+  --card: oklch(0.985 0.012 195);
+  --card-foreground: oklch(0.22 0.035 210);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.22 0.035 210);
+  --primary: oklch(0.5 0.13 195);
+  --primary-foreground: oklch(1 0 0);
+  --secondary: oklch(0.95 0.018 195);
+  --secondary-foreground: oklch(0.22 0.035 210);
+  --muted: oklch(0.95 0.012 195);
+  --muted-foreground: oklch(0.46 0.03 200);
+  --accent: oklch(0.55 0.14 195);
+  --accent-foreground: oklch(1 0 0);
+  --border: oklch(0.78 0.07 195 / 0.55);
+  --input: oklch(0.94 0.015 195);
+  --ring: oklch(0.55 0.14 195);
+  --surface: oklch(0.97 0.015 195);
+  --surface-foreground: oklch(0.22 0.035 210);
+  --gradient-card: linear-gradient(160deg, oklch(0.99 0.01 195), oklch(0.95 0.025 195));
+  --gradient-cyan: linear-gradient(135deg, oklch(0.5 0.13 195), oklch(0.4 0.14 200));
+  --shadow-glow: 0 20px 60px -22px oklch(0.55 0.14 195 / 0.4);
+  --shadow-soft: 0 10px 30px -15px oklch(0.4 0.06 200 / 0.18);
+  background-color: var(--background);
+  color: var(--foreground);
+}
+.theme-white-teal .text-gradient {
+  background: linear-gradient(135deg, oklch(0.5 0.14 195), oklch(0.3 0.1 205));
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+}
+
+/* --- FAQ: light teal -------------------------------------- */
+.theme-light-teal {
+  --background: oklch(0.955 0.025 190);
+  --foreground: oklch(0.2 0.04 210);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.2 0.04 210);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.2 0.04 210);
+  --primary: oklch(0.45 0.13 195);
+  --primary-foreground: oklch(1 0 0);
+  --secondary: oklch(0.92 0.03 190);
+  --secondary-foreground: oklch(0.2 0.04 210);
+  --muted: oklch(0.93 0.025 190);
+  --muted-foreground: oklch(0.42 0.04 200);
+  --accent: oklch(0.5 0.14 195);
+  --accent-foreground: oklch(1 0 0);
+  --border: oklch(0.85 0.04 190);
+  --input: oklch(0.92 0.025 190);
+  --ring: oklch(0.5 0.14 195);
+  --surface: oklch(0.97 0.02 190);
+  --surface-foreground: oklch(0.2 0.04 210);
+  --gradient-card: linear-gradient(160deg, oklch(1 0 0), oklch(0.96 0.025 190));
+  --gradient-cyan: linear-gradient(135deg, oklch(0.45 0.13 195), oklch(0.36 0.14 200));
+  --shadow-glow: 0 20px 60px -22px oklch(0.45 0.13 195 / 0.35);
+  --shadow-soft: 0 10px 30px -15px oklch(0.4 0.05 200 / 0.18);
+  background-color: var(--background);
+  color: var(--foreground);
+}
+.theme-light-teal .text-gradient {
+  background: linear-gradient(135deg, oklch(0.45 0.14 195), oklch(0.28 0.1 205));
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+}
+
+/* --- BLOG: pure white with dark green card accents -------- */
+.theme-blog-white {
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.22 0.03 200);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.22 0.03 200);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.22 0.03 200);
+  --primary: oklch(0.4 0.09 160);
+  --primary-foreground: oklch(1 0 0);
+  --secondary: oklch(0.96 0.01 160);
+  --secondary-foreground: oklch(0.22 0.03 200);
+  --muted: oklch(0.96 0.008 160);
+  --muted-foreground: oklch(0.46 0.02 200);
+  --accent: oklch(0.45 0.1 160);
+  --accent-foreground: oklch(1 0 0);
+  --border: oklch(0.91 0.01 160);
+  --input: oklch(0.94 0.01 160);
+  --ring: oklch(0.4 0.09 160);
+  --surface: oklch(0.98 0.008 160);
+  --surface-foreground: oklch(0.22 0.03 200);
+  --gradient-card: linear-gradient(160deg, oklch(1 0 0), oklch(0.985 0.008 160));
+  --gradient-cyan: linear-gradient(135deg, oklch(0.4 0.09 160), oklch(0.3 0.08 165));
+  --shadow-glow: 0 20px 60px -25px oklch(0.4 0.09 160 / 0.35);
+  --shadow-soft: 0 10px 30px -15px oklch(0.3 0.05 160 / 0.18);
+  background-color: var(--background);
+  color: var(--foreground);
+}
+.theme-blog-white .text-gradient {
+  background: linear-gradient(135deg, oklch(0.4 0.09 160), oklch(0.25 0.07 160));
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+}
+/* Dark green top strip for blog cards */
+.theme-blog-white .blog-card {
+  border-top: 4px solid oklch(0.32 0.08 160);
+  border-top-left-radius: 1.5rem;
+  border-top-right-radius: 1.5rem;
+}

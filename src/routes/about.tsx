@@ -35,7 +35,7 @@ function AboutPage() {
   const linkedinUrl = "https://www.linkedin.com/in/kehinde-adelakun-284790218";
 
   return (
-    <div>
+    <div className="theme-clean-white">
       <section className="relative border-b border-border">
         <div className="mx-auto max-w-7xl px-6 py-20 md:py-28">
           <span className="text-xs font-semibold uppercase tracking-[0.25em] text-primary">About Business Movers</span>
