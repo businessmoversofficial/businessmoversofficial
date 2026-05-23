@@ -3,6 +3,7 @@ import { Building2, Banknote, ShoppingBasket, Scale, Stethoscope, ShieldCheck, U
 import realEstateImg from "@/assets/industry-realestate-crew.png";
 import fintechImg from "@/assets/industry-fintech-robot.png";
 import fmcgImg from "@/assets/industry-fmcg-ops.png";
+import heroChess from "@/assets/industries-hero-chess.png";
 import securityImg from "@/assets/industry-security.png";
 import lawImg from "@/assets/industry-law.png";
 import agricultureImg from "@/assets/industry-agriculture.png";
