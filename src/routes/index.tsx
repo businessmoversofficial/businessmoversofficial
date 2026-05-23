@@ -170,24 +170,39 @@ function HomePage() {
             See Business Movers <span className="text-gradient">in action.</span>
           </h2>
         </div>
-        <div className="mt-10 rounded-3xl border border-primary/20 bg-gradient-card p-8 shadow-soft md:p-10">
-          <div className="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
-            <div>
-              <p className="text-sm leading-relaxed text-muted-foreground">
-                Copy the link below and paste it in your browser to watch the Business Movers video.
-              </p>
-              <p className="mt-3 break-all text-sm font-semibold text-primary">
-                {videoUrl}
-              </p>
+        <div className="mt-10 overflow-hidden rounded-3xl border border-primary/20 bg-gradient-card shadow-soft">
+          <div className="relative aspect-video w-full">
+            <iframe
+              className="absolute inset-0 h-full w-full"
+              src="https://www.youtube.com/embed/4Wu72VV6kvk"
+              title="Business Movers video"
+              loading="lazy"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerPolicy="strict-origin-when-cross-origin"
+              allowFullScreen
+            />
+          </div>
+          <div className="flex flex-col gap-3 p-6 md:flex-row md:items-center md:justify-between">
+            <p className="text-sm text-muted-foreground">
+              Trouble playing here? Watch it directly on YouTube.
+            </p>
+            <div className="flex items-center gap-3">
+              <a
+                href={videoUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 rounded-full bg-gradient-cyan px-5 py-2.5 text-sm font-semibold text-primary-foreground shadow-glow transition-transform hover:scale-105"
+              >
+                Open on YouTube <ArrowRight className="h-4 w-4" />
+              </a>
+              <button
+                type="button"
+                onClick={copyVideoLink}
+                className="inline-flex items-center gap-2 rounded-full border border-primary/30 px-5 py-2.5 text-sm font-semibold text-primary transition-colors hover:bg-primary/10"
+              >
+                {copiedVideoLink ? "Link copied" : "Copy link"} <Copy className="h-4 w-4" />
+              </button>
             </div>
-            <button
-              type="button"
-              onClick={copyVideoLink}
-              className="inline-flex shrink-0 items-center justify-center gap-2 rounded-full bg-gradient-cyan px-7 py-3.5 text-sm font-semibold text-primary-foreground shadow-glow transition-transform hover:scale-105"
-              aria-label="Copy Business Movers YouTube video link"
-            >
-              {copiedVideoLink ? "Link copied" : "Copy YouTube link"} <Copy className="h-4 w-4" />
-            </button>
           </div>
         </div>
       </section>
