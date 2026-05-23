@@ -115,6 +115,25 @@ function AboutPage() {
         </div>
       </section>
 
+      {/* WORK IMAGE BAND */}
+      <section className="mx-auto max-w-7xl px-6 pt-20">
+        <div className="relative overflow-hidden rounded-3xl border border-border shadow-soft">
+          <img
+            src={businessmen}
+            alt="Business Movers strategy session in progress"
+            loading="lazy"
+            className="aspect-[21/9] w-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-tr from-primary/40 via-transparent to-transparent" />
+          <div className="absolute bottom-0 left-0 max-w-md p-8 md:p-10">
+            <span className="text-xs font-semibold uppercase tracking-[0.25em] text-white/90">In the room</span>
+            <p className="mt-2 font-display text-xl font-bold text-white md:text-2xl">
+              Co-building strategy with founders, not handing over reports.
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* MANAGEMENT TEAM */}
       <section className="mx-auto max-w-7xl px-6 py-24">
         <div className="text-center">
