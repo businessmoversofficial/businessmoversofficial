@@ -2,6 +2,7 @@ import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { ArrowLeft, Calendar, Clock, Gift, MessageCircle } from "lucide-react";
 import { getPostBySlug } from "@/lib/blog.functions";
 import { NewsletterSignup } from "@/components/NewsletterSignup";
+import { ShareButtons } from "@/components/ShareButtons";
 
 export const Route = createFileRoute("/blog/$slug")({
   loader: async ({ params }) => {
@@ -125,6 +126,14 @@ function BlogPostPage() {
 
       <div className="mt-10 space-y-5">
         {paragraphs.map(renderParagraph)}
+      </div>
+
+      <div className="mt-10 border-t border-border pt-6">
+        <ShareButtons
+          url={`https://businessmoversofficial.lovable.app/blog/${post.slug}`}
+          title={post.title}
+          excerpt={post.excerpt}
+        />
       </div>
 
       {post.lead_magnet_title && (
