@@ -67,14 +67,25 @@ function ServicesPage() {
   return (
     <div className="theme-offwhite">
       <section className="border-b border-border">
-        <div className="mx-auto max-w-7xl px-6 py-20 md:py-28">
-          <span className="text-xs font-semibold uppercase tracking-[0.25em] text-primary">Our Services</span>
-          <h1 className="mt-4 max-w-4xl font-display text-5xl font-bold leading-tight md:text-7xl">
-            A comprehensive suite for <span className="text-gradient">sustainable growth.</span>
-          </h1>
-          <p className="mt-6 max-w-2xl text-lg text-muted-foreground">
-            From the first market signal to the long term expansion plan, every engagement is tailored to your business, your market, and your moment.
-          </p>
+        <div className="mx-auto grid max-w-7xl gap-12 px-6 py-20 md:py-28 md:grid-cols-[1.1fr_1fr] md:items-center">
+          <div>
+            <span className="text-xs font-semibold uppercase tracking-[0.25em] text-primary">Our Services</span>
+            <h1 className="mt-4 max-w-4xl font-display text-5xl font-bold leading-tight md:text-7xl">
+              A comprehensive suite for <span className="text-gradient">sustainable growth.</span>
+            </h1>
+            <p className="mt-6 max-w-2xl text-lg text-muted-foreground" style={{ textAlign: "justify" }}>
+              From the first market signal to the long term expansion plan, every engagement is tailored to your business, your market, and your moment.
+            </p>
+          </div>
+          <div className="relative">
+            <div className="absolute -inset-4 -z-10 rounded-3xl bg-primary/15 blur-2xl" />
+            <img
+              src={boardroom}
+              alt="Strategy session in a modern boardroom"
+              loading="lazy"
+              className="aspect-[4/3] w-full rounded-3xl border border-primary/20 object-cover shadow-soft"
+            />
+          </div>
         </div>
       </section>
 
