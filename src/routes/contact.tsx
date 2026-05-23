@@ -91,14 +91,19 @@ function ContactPage() {
   return (
     <div>
       <section className="border-b border-border">
-        <div className="mx-auto max-w-7xl px-6 py-20 md:py-28">
-          <span className="text-xs font-semibold uppercase tracking-[0.25em] text-primary">Connect With Us</span>
-          <h1 className="mt-4 max-w-4xl font-display text-5xl font-bold leading-tight md:text-7xl">
-            Let's position your business for <span className="text-gradient">excellence.</span>
-          </h1>
-          <p className="mt-6 max-w-2xl text-lg text-muted-foreground">
-            Contact us today for a 30-minute free consultation. The short questionnaire below helps us prepare so we can give you real value from minute one.
-          </p>
+        <div className="mx-auto grid max-w-7xl gap-12 px-6 py-20 md:grid-cols-[1.1fr_0.9fr] md:items-center md:py-28">
+          <div>
+            <span className="text-xs font-semibold uppercase tracking-[0.25em] text-primary">Connect With Us</span>
+            <h1 className="mt-4 font-display text-5xl font-bold leading-tight md:text-7xl">
+              Let's position your business for <span className="text-gradient">excellence.</span>
+            </h1>
+            <p className="mt-6 text-lg text-muted-foreground">
+              Contact us today for a 30-minute free consultation. The short questionnaire below helps us prepare so we can give you real value from minute one.
+            </p>
+          </div>
+          <div>
+            <img src={contactPortrait} alt="Confident business professional ready to connect" loading="lazy" className="aspect-[4/5] w-full rounded-2xl object-cover shadow-soft" />
+          </div>
         </div>
       </section>
 
