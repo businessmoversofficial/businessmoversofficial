@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Award, Lightbulb, ShieldCheck, Users, Target, Zap, Sparkles, Linkedin } from "lucide-react";
+import { Award, Lightbulb, ShieldCheck, Users, Target, Zap, Sparkles, Linkedin, Briefcase, Megaphone, Scale, Wallet, BarChart3, Palette, TrendingUp } from "lucide-react";
 import founder from "@/assets/founder-portrait.jpg";
 
 export const Route = createFileRoute("/about")({
@@ -19,6 +19,16 @@ const values = [
   { icon: Users, title: "Client-Centric", desc: "Our clients' success is at the heart of everything we do. Tailored solutions, every time." },
   { icon: Target, title: "Results-Driven", desc: "Focused on delivering measurable outcomes and helping clients achieve their objectives." },
   { icon: Zap, title: "Adaptability", desc: "We thrive in dynamic environments, helping our clients navigate evolving markets and challenges." },
+];
+
+const team = [
+  { name: "Adelakun Kehinde", role: "Managing Director", icon: Briefcase },
+  { name: "Sarah Shitan", role: "Head of Digital Marketing", icon: Megaphone },
+  { name: "Ajayi Samuel", role: "Legal & Compliance", icon: Scale },
+  { name: "Adelakun Taiwo", role: "Head of Finance", icon: Wallet },
+  { name: "Odusola Ayokunle", role: "Data Analyst", icon: BarChart3 },
+  { name: "Mayowa Daniel", role: "Product Designer", icon: Palette },
+  { name: "Oluseye Salako", role: "Head of Sales & Marketing", icon: TrendingUp },
 ];
 
 function AboutPage() {
@@ -92,8 +102,30 @@ function AboutPage() {
         </div>
       </section>
 
-      {/* VALUES */}
+      {/* MANAGEMENT TEAM */}
       <section className="mx-auto max-w-7xl px-6 py-24">
+        <div className="text-center">
+          <span className="text-xs font-semibold uppercase tracking-[0.25em] text-primary">Meet the team</span>
+          <h2 className="mt-3 font-display text-4xl font-bold md:text-5xl">Management Team</h2>
+          <p className="mx-auto mt-4 max-w-2xl text-muted-foreground">
+            A multi-disciplinary leadership team uniting strategy, marketing, finance, legal, design, and analytics under one roof.
+          </p>
+        </div>
+        <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {team.map((m) => (
+            <div key={m.name} className="rounded-2xl border border-border bg-gradient-card p-7 transition-all hover:-translate-y-1 hover:border-primary/50">
+              <div className="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-primary/15 text-primary ring-1 ring-primary/30">
+                <m.icon className="h-5 w-5" />
+              </div>
+              <h3 className="mt-5 font-display text-xl font-semibold">{m.name}</h3>
+              <p className="mt-1 text-sm font-medium text-primary">{m.role}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* VALUES */}
+      <section className="mx-auto max-w-7xl px-6 pb-24">
         <div className="text-center">
           <span className="text-xs font-semibold uppercase tracking-[0.25em] text-primary">Our core values</span>
           <h2 className="mt-3 font-display text-4xl font-bold md:text-5xl">The driving force behind everything we do.</h2>

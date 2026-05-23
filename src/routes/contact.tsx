@@ -18,10 +18,23 @@ export const Route = createFileRoute("/contact")({
 const contactSchema = z.object({
   name: z.string().trim().min(1, "Name is required").max(100),
   email: z.string().trim().email("Invalid email").max(255),
-  company: z.string().trim().max(200).optional().or(z.literal("")),
+  business_name: z.string().trim().max(200).optional().or(z.literal("")),
   industry: z.string().trim().max(200).optional().or(z.literal("")),
-  message: z.string().trim().min(1, "Message is required").max(2000),
+  years_in_business: z.string().max(50).optional().or(z.literal("")),
+  business_stage: z.string().max(50).optional().or(z.literal("")),
+  biggest_challenge: z.string().max(100).optional().or(z.literal("")),
+  monthly_revenue: z.string().max(50).optional().or(z.literal("")),
+  success_outcome: z.string().trim().max(1000).optional().or(z.literal("")),
+  hear_about_us: z.string().trim().max(200).optional().or(z.literal("")),
+  preferred_contact: z.string().max(50).optional().or(z.literal("")),
+  message: z.string().trim().min(1, "Please add a short message").max(2000),
 });
+
+const yearsOptions = ["Less than 1 year", "1–3 years", "3–5 years", "5+ years"];
+const stageOptions = ["Idea stage", "Just launched", "Growing but stuck", "Scaling"];
+const challengeOptions = ["Entering a new market", "Growing revenue", "Fixing business structure", "All of the above"];
+const revenueOptions = ["Pre-revenue", "Under ₦500k", "₦500k–₦2M", "₦2M–₦10M", "Above ₦10M"];
+const contactOptions = ["Phone number", "Email", "WhatsApp"];
 
 function ContactPage() {
   const [sent, setSent] = useState(false);
@@ -33,8 +46,15 @@ function ContactPage() {
     const raw = {
       name: String(fd.get("name") ?? ""),
       email: String(fd.get("email") ?? ""),
-      company: String(fd.get("company") ?? ""),
+      business_name: String(fd.get("business_name") ?? ""),
       industry: String(fd.get("industry") ?? ""),
+      years_in_business: String(fd.get("years_in_business") ?? ""),
+      business_stage: String(fd.get("business_stage") ?? ""),
+      biggest_challenge: String(fd.get("biggest_challenge") ?? ""),
+      monthly_revenue: String(fd.get("monthly_revenue") ?? ""),
+      success_outcome: String(fd.get("success_outcome") ?? ""),
+      hear_about_us: String(fd.get("hear_about_us") ?? ""),
+      preferred_contact: String(fd.get("preferred_contact") ?? ""),
       message: String(fd.get("message") ?? ""),
     };
     const parsed = contactSchema.safeParse(raw);
@@ -43,12 +63,21 @@ function ContactPage() {
       return;
     }
     setLoading(true);
+    const d = parsed.data;
     const { error } = await supabase.from("contact_submissions").insert({
-      name: parsed.data.name,
-      email: parsed.data.email,
-      company: parsed.data.company || null,
-      industry: parsed.data.industry || null,
-      message: parsed.data.message,
+      name: d.name,
+      email: d.email,
+      company: d.business_name || null,
+      business_name: d.business_name || null,
+      industry: d.industry || null,
+      years_in_business: d.years_in_business || null,
+      business_stage: d.business_stage || null,
+      biggest_challenge: d.biggest_challenge || null,
+      monthly_revenue: d.monthly_revenue || null,
+      success_outcome: d.success_outcome || null,
+      hear_about_us: d.hear_about_us || null,
+      preferred_contact: d.preferred_contact || null,
+      message: d.message,
     });
     setLoading(false);
     if (error) {
@@ -67,13 +96,13 @@ function ContactPage() {
             Let's position your business for <span className="text-gradient">excellence.</span>
           </h1>
           <p className="mt-6 max-w-2xl text-lg text-muted-foreground">
-            Contact us today for a 30-minute free consultation. No obligation — just a clear-eyed look at where you are and where you could be.
+            Contact us today for a 30-minute free consultation. The short questionnaire below helps us prepare so we can give you real value from minute one.
           </p>
         </div>
       </section>
 
       <section className="mx-auto max-w-7xl px-6 py-20">
-        <div className="grid gap-10 md:grid-cols-[1fr_1.2fr]">
+        <div className="grid gap-10 lg:grid-cols-[1fr_1.4fr]">
           {/* CONTACT INFO */}
           <div className="space-y-4">
             <a href="mailto:businessmoversofficial@gmail.com" className="flex items-start gap-4 rounded-2xl border border-border bg-gradient-card p-6 transition-colors hover:border-primary/50">
@@ -156,33 +185,65 @@ function ContactPage() {
             className="rounded-3xl border border-primary/20 bg-gradient-card p-8 shadow-soft md:p-10"
           >
             <h2 className="font-display text-2xl font-bold">Tell us about your business</h2>
-            <p className="mt-2 text-sm text-muted-foreground">We'll get back within 24 hours.</p>
+            <p className="mt-2 text-sm text-muted-foreground">A short pre-qualification questionnaire. Takes ~2 minutes.</p>
 
             {sent ? (
               <div className="mt-8 flex flex-col items-center gap-3 rounded-2xl border border-primary/40 bg-primary/10 p-10 text-center">
                 <CheckCircle2 className="h-10 w-10 text-primary" />
                 <h3 className="font-display text-xl font-semibold">Message received.</h3>
-                <p className="text-sm text-muted-foreground">Thank you. We'll be in touch within 24 hours.</p>
+                <p className="text-sm text-muted-foreground">Thank you. We'll review your responses and be in touch within 24 hours.</p>
               </div>
             ) : (
-              <div className="mt-6 grid gap-4">
+              <div className="mt-6 grid gap-5">
                 <div className="grid gap-4 md:grid-cols-2">
-                  <Field label="Full name" name="name" required />
+                  <Field label="Your name" name="name" required />
                   <Field label="Email" name="email" type="email" required />
                 </div>
-                <Field label="Company" name="company" />
-                <Field label="Industry" name="industry" placeholder="e.g. Fintech, Real Estate, FMCG…" />
+                <div className="grid gap-4 md:grid-cols-2">
+                  <Field label="Business name" name="business_name" />
+                  <Field label="Industry" name="industry" placeholder="e.g. Fintech, Real Estate, FMCG…" />
+                </div>
+
+                <RadioGroup label="How long have you been in business?" name="years_in_business" options={yearsOptions} />
+                <RadioGroup label="What stage is your business currently at?" name="business_stage" options={stageOptions} />
+                <RadioGroup label="What is your biggest challenge right now?" name="biggest_challenge" options={challengeOptions} />
+                <RadioGroup label="What does your monthly revenue look like currently?" name="monthly_revenue" options={revenueOptions} />
+
                 <div>
-                  <label className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">How can we help?</label>
+                  <label className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">
+                    What would a successful outcome look like for you in the next 90 days?
+                  </label>
+                  <textarea
+                    name="success_outcome"
+                    rows={3}
+                    maxLength={1000}
+                    className="mt-2 w-full resize-none rounded-xl border border-input bg-background/60 px-4 py-3 text-sm outline-none transition-colors focus:border-primary"
+                    placeholder="e.g. Close 5 new enterprise clients, launch in 2 new cities, raise pre-seed…"
+                  />
+                </div>
+
+                <Field label="How did you hear about Business Movers?" name="hear_about_us" placeholder="e.g. Instagram, referral, Google…" />
+
+                <RadioGroup label="What is the best way to reach you?" name="preferred_contact" options={contactOptions} />
+
+                <div>
+                  <label className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">Anything else we should know?</label>
                   <textarea
                     name="message"
-                    rows={5}
+                    rows={4}
                     required
                     maxLength={2000}
                     className="mt-2 w-full resize-none rounded-xl border border-input bg-background/60 px-4 py-3 text-sm outline-none transition-colors focus:border-primary"
-                    placeholder="Tell us about your goals, challenges, and what success looks like."
+                    placeholder="Brief context, urgency, timelines, budget — whatever helps us prepare."
                   />
                 </div>
+
+                <p className="text-xs text-muted-foreground">
+                  By submitting, you agree to our{" "}
+                  <a href="/privacy" className="text-primary hover:underline">Privacy Policy</a> and{" "}
+                  <a href="/terms" className="text-primary hover:underline">Terms of Service</a>.
+                </p>
+
                 <button
                   type="submit"
                   disabled={loading}
@@ -211,5 +272,24 @@ function Field({ label, name, type = "text", required, placeholder }: { label: s
         className="mt-2 w-full rounded-xl border border-input bg-background/60 px-4 py-3 text-sm outline-none transition-colors focus:border-primary"
       />
     </div>
+  );
+}
+
+function RadioGroup({ label, name, options }: { label: string; name: string; options: string[] }) {
+  return (
+    <fieldset>
+      <legend className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">{label}</legend>
+      <div className="mt-2 flex flex-wrap gap-2">
+        {options.map((opt) => (
+          <label
+            key={opt}
+            className="cursor-pointer rounded-full border border-input bg-background/60 px-4 py-2 text-xs transition-colors hover:border-primary has-[:checked]:border-primary has-[:checked]:bg-primary/15 has-[:checked]:text-primary"
+          >
+            <input type="radio" name={name} value={opt} className="sr-only" />
+            {opt}
+          </label>
+        ))}
+      </div>
+    </fieldset>
   );
 }
