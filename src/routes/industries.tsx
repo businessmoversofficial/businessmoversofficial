@@ -48,8 +48,8 @@ function IndustriesPage() {
           <div className="relative mt-12 overflow-hidden rounded-2xl shadow-soft">
             <video
               src={heroVideo}
+              controls
               autoPlay
-              muted
               loop
               playsInline
               className="aspect-video w-full object-cover"
