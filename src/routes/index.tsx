@@ -17,6 +17,12 @@ import {
 import heroBg from "@/assets/hero-bg.jpg";
 import founder from "@/assets/founder-home.jpg";
 import ebookCover from "@/assets/ebook-side-hustles-cover.jpg";
+import logoNobleGuard from "@/assets/clients/noble-guard.png";
+import logoHypeman from "@/assets/clients/hypeman-africa.png";
+import logoGeHomes from "@/assets/clients/ge-homes.jpg";
+import logoAbsoluteGrace from "@/assets/clients/absolute-grace.webp";
+import logoDapoxplain from "@/assets/clients/dapoxplain.jpg";
+import logoOddspace from "@/assets/clients/oddspace.png";
 
 
 export const Route = createFileRoute("/")({
@@ -50,16 +56,16 @@ const stats = [
   { v: "24/7", l: "Client Support" },
 ];
 
-const clients = [
-  { name: "Noble Guard Security", industry: "Security" },
+const clients: { name: string; industry: string; logo?: string }[] = [
+  { name: "Noble Guard Security", industry: "Security", logo: logoNobleGuard },
   { name: "Baker Industries Limited", industry: "Manufacturing" },
-  { name: "Oddspace Consult", industry: "Consulting" },
+  { name: "Oddspace Consult", industry: "Consulting", logo: logoOddspace },
   { name: "Novasmile Dental Studios", industry: "Healthcare" },
-  { name: "HypeMan Africa", industry: "Media" },
-  { name: "GE Homes & Properties Limited", industry: "Real Estate" },
-  { name: "Absolute Grace Investment Limited", industry: "Investment" },
+  { name: "HypeMan Africa", industry: "Media", logo: logoHypeman },
+  { name: "GE Homes & Properties Limited", industry: "Real Estate", logo: logoGeHomes },
+  { name: "Absolute Grace Investment Limited", industry: "Investment", logo: logoAbsoluteGrace },
   { name: "Dukioluwa Industries Limited", industry: "Industrial" },
-  { name: "DHS Investment Limited", industry: "Investment" },
+  { name: "DHS Investment Limited", industry: "Investment", logo: logoDapoxplain },
 ];
 
 const initialsFor = (name: string) =>
@@ -342,9 +348,15 @@ function HomePage() {
                 key={c.name}
                 className="group flex items-center gap-4 rounded-2xl border border-border bg-gradient-card p-4 transition-all hover:-translate-y-0.5 hover:border-primary/50 hover:shadow-glow"
               >
-                <div className="flex h-14 w-14 flex-shrink-0 items-center justify-center rounded-xl bg-gradient-cyan font-display text-base font-bold text-primary-foreground shadow-glow ring-1 ring-primary/40">
-                  {initialsFor(c.name)}
-                </div>
+                {c.logo ? (
+                  <div className="flex h-14 w-14 flex-shrink-0 items-center justify-center rounded-xl bg-white p-1.5 ring-1 ring-border">
+                    <img src={c.logo} alt={`${c.name} logo`} loading="lazy" className="h-full w-full object-contain" />
+                  </div>
+                ) : (
+                  <div className="flex h-14 w-14 flex-shrink-0 items-center justify-center rounded-xl bg-gradient-cyan font-display text-base font-bold text-primary-foreground shadow-glow ring-1 ring-primary/40">
+                    {initialsFor(c.name)}
+                  </div>
+                )}
                 <div className="min-w-0">
                   <div className="truncate font-display text-sm font-semibold text-foreground">{c.name}</div>
                   <div className="text-[10px] uppercase tracking-[0.18em] text-muted-foreground">{c.industry}</div>
