@@ -23,6 +23,8 @@ import logoGeHomes from "@/assets/clients/ge-homes.jpg";
 import logoAbsoluteGrace from "@/assets/clients/absolute-grace.webp";
 import logoDapoxplain from "@/assets/clients/dapoxplain.jpg";
 import logoOddspace from "@/assets/clients/oddspace.png";
+import logoNovasmile from "@/assets/clients/novasmile.jpg";
+import logoBaker from "@/assets/clients/baker-industries.png";
 
 
 export const Route = createFileRoute("/")({
@@ -58,9 +60,9 @@ const stats = [
 
 const clients: { name: string; industry: string; logo?: string }[] = [
   { name: "Noble Guard Security", industry: "Security", logo: logoNobleGuard },
-  { name: "Baker Industries Limited", industry: "Manufacturing" },
+  { name: "Baker Industries Limited", industry: "Manufacturing", logo: logoBaker },
   { name: "Oddspace Consult", industry: "Consulting", logo: logoOddspace },
-  { name: "Novasmile Dental Studios", industry: "Healthcare" },
+  { name: "Novasmile Dental Studios", industry: "Healthcare", logo: logoNovasmile },
   { name: "HypeMan Africa", industry: "Media", logo: logoHypeman },
   { name: "GE Homes & Properties Limited", industry: "Real Estate", logo: logoGeHomes },
   { name: "Absolute Grace Investment Limited", industry: "Investment", logo: logoAbsoluteGrace },
