@@ -14,6 +14,7 @@ import {
   Quote,
   Star,
 } from "lucide-react";
+import { CountUp } from "@/components/CountUp";
 import heroBg from "@/assets/hero-bg.jpg";
 import founder from "@/assets/founder-home.jpg";
 import ebookCover from "@/assets/ebook-side-hustles-cover.jpg";
@@ -157,7 +158,7 @@ function HomePage() {
 
           <div className="relative">
             <div className="absolute -inset-6 -z-10 rounded-3xl bg-gradient-cyan opacity-20 blur-2xl" />
-            <div className="relative overflow-hidden rounded-3xl border border-primary/20 bg-gradient-card shadow-soft">
+            <div className="img-zoom relative overflow-hidden rounded-3xl border border-primary/20 bg-gradient-card shadow-soft">
               <img
                 src={founder}
                 alt="Adelakun Kehinde, Founder, Business Movers"
@@ -179,7 +180,9 @@ function HomePage() {
         <div className="mx-auto grid max-w-7xl grid-cols-2 gap-8 px-6 py-12 md:grid-cols-4">
           {stats.map((s) => (
             <div key={s.l}>
-              <div className="font-display text-4xl font-bold text-primary md:text-5xl">{s.v}</div>
+              <div className="font-display text-4xl font-bold text-primary md:text-5xl">
+                <CountUp value={s.v} />
+              </div>
               <div className="mt-2 text-xs uppercase tracking-wider text-muted-foreground">{s.l}</div>
             </div>
           ))}
@@ -348,14 +351,14 @@ function HomePage() {
             {clients.map((c) => (
               <div
                 key={c.name}
-                className="group flex items-center gap-4 rounded-2xl border border-border bg-gradient-card p-4 transition-all hover:-translate-y-0.5 hover:border-primary/50 hover:shadow-glow"
+                className="group flex items-center gap-4 rounded-2xl border border-border bg-gradient-card p-4 transition-all duration-300 hover:scale-105 hover:border-primary/50 hover:shadow-glow"
               >
                 {c.logo ? (
-                  <div className="flex h-14 w-14 flex-shrink-0 items-center justify-center rounded-xl bg-white p-1.5 ring-1 ring-border">
+                  <div className="img-zoom flex h-14 w-14 flex-shrink-0 items-center justify-center rounded-xl bg-white p-1.5 ring-1 ring-border">
                     <img src={c.logo} alt={`${c.name} logo`} loading="lazy" className="h-full w-full object-contain" />
                   </div>
                 ) : (
-                  <div className="flex h-14 w-14 flex-shrink-0 items-center justify-center rounded-xl bg-gradient-cyan font-display text-base font-bold text-primary-foreground shadow-glow ring-1 ring-primary/40">
+                  <div className="flex h-14 w-14 flex-shrink-0 items-center justify-center rounded-xl bg-gradient-cyan font-display text-base font-bold text-primary-foreground shadow-glow ring-1 ring-primary/40 transition-transform duration-300 group-hover:scale-110">
                     {initialsFor(c.name)}
                   </div>
                 )}
