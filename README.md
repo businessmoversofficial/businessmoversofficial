@@ -4,7 +4,7 @@
 
 ---
 
-I am a Business Development Strategist and No-Code AI Developer based in Lagos, Nigeria.
+I am a Business Development Strategist and AI Powered Digital Builder based in Lagos, Nigeria.
 I founded **Business Movers** (RC: 7285941), a consultancy that helps businesses grow through
 strategy, digital presence, and AI-powered execution.
 
