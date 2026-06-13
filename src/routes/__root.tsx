@@ -13,6 +13,7 @@ import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { FloatingWhatsApp } from "@/components/FloatingWhatsApp";
 import { CookieBanner } from "@/components/CookieBanner";
+import { ScrollReveal } from "@/components/ScrollReveal";
 
 function NotFoundComponent() {
   return (
@@ -127,6 +128,7 @@ function RootComponent() {
         <SiteFooter />
         <FloatingWhatsApp />
         <CookieBanner />
+        <ScrollReveal />
       </div>
     </QueryClientProvider>
   );
