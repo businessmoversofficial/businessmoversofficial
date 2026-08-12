@@ -24,6 +24,8 @@ My work sits at the intersection of **business strategy** and **digital executio
 
 📱 &nbsp; Web applications powered by AI development tools
 
+🎓 &nbsp; AI Agents and Automation
+
 🎯 &nbsp; Ad-ready landing pages with lead capture systems
 
 📊 &nbsp; Business strategy, market research and growth planning
